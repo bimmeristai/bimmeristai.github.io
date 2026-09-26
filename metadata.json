@@ -1,0 +1,8 @@
+{
+  "name": "Bimmeristai Kaunas",
+  "description": "Profesionalus BMW diagnostikos, kodavimo ir remonto servisas Kaune. Modernūs sprendimai Jūsų BMW automobiliui.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
