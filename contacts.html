@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontaktai ir schema | Bimmeristai Kaunas – BMW Servisas</title>
+    <meta
+      name="description"
+      content="Bimmeristai Kaunas: Karolis (diagnostika ir kodavimas +37063305031), Karolis (remontas ir gedimai +37068644262). Registracija būtina prieš atvykstant."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kontaktai – Bimmeristai BMW servisas Kaune" />
+    <meta property="og:description" content="BMW diagnostika, variklio grandinių patikra (30€), CarPlay ir remontas Kaune." />
+    <meta property="og:image" content="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg" />
+    <meta name="theme-color" content="#0a0c10" />
+
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="alternate" hreflang="lt" href="contacts.html" />
+    <link rel="alternate" hreflang="en" href="contacts.html" />
+
+    <style>
+      :root {
+        --bg-dark: #0a0c10;
+        --bg-surface: #10141d;
+        --bg-surface-elevated: #161c28;
+        --bg-glass: rgba(16, 20, 29, 0.92);
+
+        --bmw-blue: #1c69d4;
+        --bmw-blue-hover: #1656b0;
+        --bmw-blue-glow: rgba(28, 105, 212, 0.35);
+        --bmw-cyan: #38bdf8;
+        --m-red: #e00000;
+
+        --text-primary: #ffffff;
+        --text-secondary: #e2e8f0;
+        --text-muted: #8b9bb4;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-hover: rgba(28, 105, 212, 0.55);
+
+        --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        --container: 1200px;
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 20px;
+        --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: var(--bg-dark);
+        color: var(--text-secondary);
+        font-family: var(--font-stack);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-dark);
+        color: var(--text-secondary);
+        line-height: 1.6;
+        overflow-x: hidden;
+        padding-bottom: 76px;
+      }
+
+      @media (min-width: 768px) {
+        body { padding-bottom: 0; }
+      }
+
+      .container {
+        width: 100%;
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .m-stripe {
+        height: 3px;
+        width: 100%;
+        background: linear-gradient(90deg, #0066bf 0%, #0066bf 33%, #00205b 33%, #00205b 66%, #e00000 66%, #e00000 100%);
+      }
+
+      .m-badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8125rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--bmw-cyan);
+        background: rgba(28, 105, 212, 0.12);
+        border: 1px solid rgba(28, 105, 212, 0.3);
+        padding: 6px 14px;
+        border-radius: 9999px;
+        margin-bottom: 16px;
+      }
+      .m-badge-pill::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--bmw-blue);
+        box-shadow: 0 0 10px var(--bmw-blue);
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--bg-glass);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+      .brand-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+      .brand-logo-img {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-sm);
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 14px var(--bmw-blue-glow);
+      }
+      .brand-name {
+        font-weight: 800;
+        font-size: 1.25rem;
+        letter-spacing: 0.04em;
+        color: var(--text-primary);
+        line-height: 1.1;
+      }
+      .brand-sub {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .nav-desktop {
+        display: none;
+        align-items: center;
+        gap: 24px;
+      }
+      @media (min-width: 900px) {
+        .nav-desktop { display: flex; }
+      }
+      .nav-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        transition: color var(--transition);
+        position: relative;
+        padding: 6px 0;
+      }
+      .nav-link:hover, .nav-link.active { color: #ffffff; }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--bmw-blue);
+        transform: scaleX(0);
+        transition: transform var(--transition);
+      }
+      .nav-link:hover::after, .nav-link.active::after {
+        transform: scaleX(1);
+      }
+
+      .lang-switcher {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 3px;
+        gap: 2px;
+      }
+      .lang-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        font-size: 0.8125rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all var(--transition);
+      }
+      .lang-btn.active {
+        background: var(--bmw-blue);
+        color: #ffffff;
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .header-contacts-box {
+        display: none;
+        flex-direction: column;
+        text-align: right;
+      }
+      @media (min-width: 992px) {
+        .header-contacts-box { display: flex; }
+      }
+      .header-phone-val {
+        font-family: monospace;
+        font-weight: 700;
+        font-size: 0.9375rem;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .header-phone-sub {
+        font-size: 0.6875rem;
+        color: var(--bmw-cyan);
+      }
+
+      .burger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 8px;
+        cursor: pointer;
+      }
+      @media (min-width: 900px) {
+        .burger-btn { display: none; }
+      }
+      .burger-btn span {
+        width: 100%;
+        height: 2px;
+        background: #ffffff;
+        border-radius: 2px;
+      }
+
+      .mobile-menu {
+        display: none;
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border);
+        padding: 20px;
+      }
+      .mobile-menu.open { display: block; }
+      .mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+      .mobile-nav-list a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 13px 24px;
+        font-weight: 700;
+        font-size: 0.9375rem;
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
+      }
+      .btn-primary {
+        background: var(--bmw-blue);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 18px var(--bmw-blue-glow);
+      }
+      .btn-primary:hover {
+        background: var(--bmw-blue-hover);
+        box-shadow: 0 6px 24px rgba(28, 105, 212, 0.6);
+        transform: translateY(-2px);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffffff;
+        border: 1px solid var(--border);
+      }
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+      }
+      .btn-danger {
+        background: var(--m-red);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .btn-danger:hover {
+        filter: brightness(1.15);
+      }
+      .btn-sm {
+        padding: 8px 16px;
+        font-size: 0.8125rem;
+      }
+
+      .section-pad {
+        padding: clamp(48px, 6vw, 80px) 0;
+      }
+
+      .section-head {
+        max-width: 65ch;
+        margin-bottom: clamp(28px, 4vw, 48px);
+      }
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.15;
+        color: #ffffff;
+        margin: 0 0 16px 0;
+      }
+      .section-desc {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      .contact-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 40px;
+      }
+      @media (min-width: 768px) {
+        .contact-cards-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .contact-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .contact-card.blue {
+        border-color: rgba(28, 105, 212, 0.4);
+        background: linear-gradient(135deg, #10141d 0%, #131926 100%);
+      }
+      .contact-card.red {
+        border-color: rgba(224, 0, 0, 0.35);
+        background: linear-gradient(135deg, #10141d 0%, #1e1317 100%);
+      }
+
+      .contact-role-tag {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        margin-bottom: 8px;
+        display: block;
+      }
+      .contact-card.blue .contact-role-tag { color: var(--bmw-cyan); }
+      .contact-card.red .contact-role-tag { color: #f87171; }
+
+      .contact-name {
+        font-size: 1.55rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 14px 0;
+      }
+      .contact-desc {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin: 0 0 24px 0;
+      }
+
+      .contact-phone-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .map-wrapper-card {
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border);
+        overflow: hidden;
+        background: var(--bg-surface);
+      }
+      .map-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 16px 24px;
+        background: #141824;
+        border-bottom: 1px solid var(--border);
+      }
+      .map-frame-box {
+        width: 100%;
+        height: 420px;
+        background: #0d0f17;
+      }
+      .map-frame-box iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        filter: contrast(1.05) saturate(0.9);
+      }
+
+      .cta-banner {
+        margin-top: 48px;
+        padding: 32px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .site-footer {
+        background: #06070a;
+        border-top: 1px solid var(--border);
+        padding: 40px 0;
+      }
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        text-align: center;
+      }
+      @media (min-width: 768px) {
+        .footer-inner { flex-direction: row; text-align: left; }
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .footer-links a:hover { color: #ffffff; }
+
+      .mobile-bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        background: rgba(10, 12, 16, 0.96);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid var(--border);
+        padding: 10px 16px;
+        display: flex;
+        gap: 10px;
+      }
+      @media (min-width: 768px) {
+        .mobile-bottom-bar { display: none; }
+      }
+      .mobile-bottom-bar .btn {
+        flex: 1;
+        padding: 12px 14px;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="m-stripe" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-link" aria-label="Bimmeristai Pradžia">
+          <img
+            src="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg"
+            alt="Bimmeristai logotipas"
+            referrerpolicy="no-referrer"
+            class="brand-logo-img"
+          />
+          <div>
+            <div class="brand-name">BIMMERISTAI</div>
+            <div class="brand-sub" data-i18n="brand_sub">KAUNAS · BMW SERVISAS</div>
+          </div>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Navigacija">
+          <a href="index.html#services" class="nav-link" data-i18n="nav_services">Paslaugos</a>
+          <a href="index.html#chain" class="nav-link" data-i18n="nav_chain">Grandinės patikra</a>
+          <a href="index.html#pricing" class="nav-link" data-i18n="nav_prices">Kainoraštis</a>
+          <a href="faq.html" class="nav-link" data-i18n="nav_faq">D.U.K.</a>
+          <a href="contacts.html" class="nav-link active" data-i18n="nav_contacts">Kontaktai</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switcher" role="group" aria-label="Kalbos pasirinkimas">
+            <button type="button" class="lang-btn active" data-lang-btn="lt">LT</button>
+            <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+          </div>
+
+          <div class="header-contacts-box">
+            <a href="tel:+37063305031" class="header-phone-val">+370 633 05031</a>
+            <span class="header-phone-sub" data-i18n="header_diagnostics_role">Diagnostika / Kodavimas</span>
+          </div>
+
+          <a href="index.html#booking" class="btn btn-primary btn-sm" data-i18n="btn_book_short">Registracija</a>
+
+          <button
+            type="button"
+            class="burger-btn"
+            id="burgerBtn"
+            aria-label="Atidaryti meniu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav-list" aria-label="Mobili navigacija">
+          <a href="index.html#services" data-i18n="nav_services">Paslaugos</a>
+          <a href="index.html#chain" data-i18n="nav_chain">Grandinės patikra</a>
+          <a href="index.html#pricing" data-i18n="nav_prices">Kainoraštis</a>
+          <a href="faq.html" data-i18n="nav_faq">D.U.K.</a>
+          <a href="contacts.html" data-i18n="nav_contacts">Kontaktai</a>
+        </nav>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="tel:+37063305031" class="btn btn-secondary" style="width: 100%;">
+            Karolis (Diagnostika): +370 633 05031
+          </a>
+          <a href="tel:+37068644262" class="btn btn-secondary" style="width: 100%;">
+            Karolis (Remontas): +370 686 44262
+          </a>
+          <a href="index.html#booking" class="btn btn-primary" style="width: 100%;" data-i18n="btn_book">
+            Registracija vizitui
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-pad">
+        <div class="container">
+          <div class="section-head">
+            <span class="m-badge-pill" data-i18n="contacts_badge">LOKACIJA IR RYŠYS · KAUNAS</span>
+            <h1 class="section-title" data-i18n="contacts_page_title">Kuriam Karoliui skambinti?</h1>
+            <p class="section-desc" data-i18n="contacts_page_desc">
+              Prieš atvykstant registracija telefonu yra būtina. Pasirinkite meistrą pagal savo gedimo pobūdį:
+            </p>
+          </div>
+
+          <div class="contact-cards-grid">
+            <div class="contact-card blue">
+              <div>
+                <span class="contact-role-tag" data-i18n="karolis1_role">DIAGNOSTIKA · KODAVIMAS · GRANDINĖS</span>
+                <h2 class="contact-name" data-i18n="karolis1_title">Karolis | Diagnostika ir kodavimas</h2>
+                <p class="contact-desc" data-i18n="karolis1_desc">
+                  Kompiuterinė B serijos variklio grandinių patikra neardant variklio (30€), pilna mazgų klaidų analizė, Fullscreen CarPlay, navigacijos žemėlapiai ir parametrų kodavimas.
+                </p>
+              </div>
+              <div class="contact-phone-row">
+                <a href="tel:+37063305031" class="btn btn-primary" style="flex: 1; font-family: monospace; font-size: 1.05rem;">
+                  📞 +370 633 05031
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-card red">
+              <div>
+                <span class="contact-role-tag" data-i18n="karolis2_role">MECHANINIS REMONTAS · AGREGATAI</span>
+                <h2 class="contact-name" data-i18n="karolis2_title">Karolis | Remontas ir gedimai</h2>
+                <p class="contact-desc" data-i18n="karolis2_desc">
+                  Variklio grandinių komplektų keitimas (B ir N serijos), mechaninis remontas, transmisijos, važiuoklės bei aušinimo sistemų gedimų šalinimas Kaune.
+                </p>
+              </div>
+              <div class="contact-phone-row">
+                <a href="tel:+37068644262" class="btn btn-danger" style="flex: 1; font-family: monospace; font-size: 1.05rem;">
+                  📞 +370 686 44262
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Maps Iframe -->
+          <div class="map-wrapper-card">
+            <div class="map-header">
+              <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: #ffffff;">
+                <span>📍</span>
+                <span data-i18n="map_location_label">Serviso lokacija: Kaunas, Lietuva</span>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Bimmeristai+Kaunas"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary btn-sm"
+                data-i18n="map_open_btn"
+              >
+                Atidaryti Google Maps ↗
+              </a>
+            </div>
+            <div class="map-frame-box">
+              <iframe
+                title="Bimmeristai Kaunas žemėlapyje"
+                src="https://www.google.com/maps?q=Kaunas,+Lithuania&amp;output=embed&amp;z=12"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="cta-banner">
+            <div>
+              <h3 style="margin: 0 0 6px 0; font-size: 1.35rem; color: #ffffff;" data-i18n="cta_booking_title">Norite užsiregistruoti apžiūrai iš anksto?</h3>
+              <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;" data-i18n="cta_booking_desc">Užpildykite greitą rezervacijos formą pagrindiniame puslapyje.</p>
+            </div>
+            <div>
+              <a href="index.html#booking" class="btn btn-primary" data-i18n="btn_book">Užpildyti formą internetu</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="index.html" class="brand-link">
+          <img
+            src="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg"
+            alt="Bimmeristai logotipas"
+            referrerpolicy="no-referrer"
+            class="brand-logo-img"
+          />
+          <div>
+            <div class="brand-name">BIMMERISTAI</div>
+            <div class="brand-sub">KAUNAS · BMW SPECIALIZACIJA</div>
+          </div>
+        </a>
+
+        <div class="footer-links">
+          <a href="index.html#services" data-i18n="nav_services">Paslaugos</a>
+          <a href="index.html#chain" data-i18n="nav_chain">Grandinės patikra</a>
+          <a href="index.html#pricing" data-i18n="nav_prices">Kainoraštis</a>
+          <a href="faq.html" data-i18n="nav_faq">D.U.K.</a>
+          <a href="contacts.html" data-i18n="nav_contacts">Kontaktai</a>
+        </div>
+
+        <div style="font-size: 0.85rem; color: var(--text-muted);">
+          © 2026 Bimmeristai Kaunas. Visos teisės saugomos.
+        </div>
+      </div>
+    </footer>
+
+    <div class="mobile-bottom-bar" aria-label="Greiti veiksmai">
+      <a href="tel:+37063305031" class="btn btn-secondary" data-i18n="btn_call">Skambinti</a>
+      <a href="index.html#booking" class="btn btn-primary" data-i18n="btn_book">Registruotis</a>
+    </div>
+
+    <script>
+      (function () {
+        'use strict';
+
+        const I18N = {
+          lt: {
+            brand_sub: "KAUNAS · BMW SERVISAS",
+            nav_services: "Paslaugos",
+            nav_chain: "Grandinės patikra",
+            nav_prices: "Kainoraštis",
+            nav_faq: "D.U.K.",
+            nav_contacts: "Kontaktai",
+            header_diagnostics_role: "Diagnostika / Kodavimas",
+            btn_book_short: "Registracija",
+            btn_book: "Registruotis patikrai",
+            btn_call: "Skambinti",
+            contacts_badge: "LOKACIJA IR RYŠYS · KAUNAS",
+            contacts_page_title: "Kuriam Karoliui skambinti?",
+            contacts_page_desc: "Prieš atvykstant registracija telefonu yra būtina. Pasirinkite meistrą pagal savo gedimo pobūdį:",
+            karolis1_role: "DIAGNOSTIKA · KODAVIMAS · GRANDINĖS",
+            karolis1_title: "Karolis | Diagnostika ir kodavimas",
+            karolis1_desc: "Kompiuterinė B serijos variklio grandinių patikra neardant variklio (30€), pilna mazgų klaidų analizė, Fullscreen CarPlay, navigacijos žemėlapiai ir parametrų kodavimas.",
+            karolis2_role: "MECHANINIS REMONTAS · AGREGATAI",
+            karolis2_title: "Karolis | Remontas ir gedimai",
+            karolis2_desc: "Variklio grandinių komplektų keitimas (B ir N serijos), mechaninis remontas, transmisijos, važiuoklės bei aušinimo sistemų gedimų šalinimas Kaune.",
+            map_location_label: "Serviso lokacija: Kaunas, Lietuva",
+            map_open_btn: "Atidaryti Google Maps ↗",
+            cta_booking_title: "Norite užsiregistruoti apžiūrai iš anksto?",
+            cta_booking_desc: "Užpildykite greitą rezervacijos formą pagrindiniame puslapyje."
+          },
+          en: {
+            brand_sub: "KAUNAS · BMW SERVICE",
+            nav_services: "Services",
+            nav_chain: "Chain Check",
+            nav_prices: "Pricing",
+            nav_faq: "FAQ",
+            nav_contacts: "Contacts",
+            header_diagnostics_role: "Diagnostics / Coding",
+            btn_book_short: "Booking",
+            btn_book: "Book Inspection",
+            btn_call: "Call",
+            contacts_badge: "LOCATION & CONTACTS · KAUNAS",
+            contacts_page_title: "Which Karolis should you call?",
+            contacts_page_desc: "Prior registration by phone is required before arrival. Select the technician based on your request:",
+            karolis1_role: "DIAGNOSTICS · CODING · TIMING CHAINS",
+            karolis1_title: "Karolis | Diagnostics & Coding",
+            karolis1_desc: "Computer diagnostic timing chain inspection for B-series engines without disassembly (30€), full error reading, Fullscreen CarPlay, maps, and coding.",
+            karolis2_role: "MECHANICAL REPAIRS · REPLACEMENTS",
+            karolis2_title: "Karolis | Repairs & Troubleshooting",
+            karolis2_desc: "Engine timing chain replacements (B and N series), mechanical repairs, chassis, cooling, and transmission fault repairs in Kaunas.",
+            map_location_label: "Workshop location: Kaunas, Lithuania",
+            map_open_btn: "Open Google Maps ↗",
+            cta_booking_title: "Want to book an inspection slot online?",
+            cta_booking_desc: "Fill in the reservation form on our home page."
+          }
+        };
+
+        let currentLang = 'lt';
+        try {
+          const saved = localStorage.getItem('bimmeristai_lang');
+          if (saved === 'en' || saved === 'lt') {
+            currentLang = saved;
+          } else if (navigator.language && navigator.language.startsWith('en')) {
+            currentLang = 'en';
+          }
+        } catch (e) {}
+
+        function applyLanguage(lang) {
+          currentLang = lang;
+          document.documentElement.lang = lang;
+          try {
+            localStorage.setItem('bimmeristai_lang', lang);
+          } catch (e) {}
+
+          document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
+          });
+
+          const dict = I18N[lang] || I18N.lt;
+          document.querySelectorAll('[data-i18n]').forEach(function (el) {
+            const key = el.getAttribute('data-i18n');
+            if (dict[key]) {
+              el.textContent = dict[key];
+            }
+          });
+        }
+
+        document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            applyLanguage(btn.getAttribute('data-lang-btn'));
+          });
+        });
+
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (burgerBtn && mobileMenu) {
+          burgerBtn.addEventListener('click', function () {
+            const open = mobileMenu.classList.toggle('open');
+            burgerBtn.setAttribute('aria-expanded', String(open));
+          });
+        }
+
+        applyLanguage(currentLang);
+      })();
+    </script>
+  </body>
+</html>

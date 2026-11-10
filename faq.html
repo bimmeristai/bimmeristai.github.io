@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D.U.K. – Dažniausiai užduodami klausimai | Bimmeristai Kaunas</title>
+    <meta
+      name="description"
+      content="Atsakymai į klausimus apie BMW kompiuterinę grandinės patikrą (30€), B ir N serijos variklius, diagnostiką neardant variklio bei kodavimą."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="D.U.K. – Bimmeristai BMW servisas Kaune" />
+    <meta property="og:description" content="BMW grandinės patikra, diagnostika, CarPlay ir kodavimas Kaune." />
+    <meta property="og:image" content="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg" />
+    <meta name="theme-color" content="#0a0c10" />
+
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="alternate" hreflang="lt" href="faq.html" />
+    <link rel="alternate" hreflang="en" href="faq.html" />
+
+    <style>
+      :root {
+        --bg-dark: #0a0c10;
+        --bg-surface: #10141d;
+        --bg-surface-elevated: #161c28;
+        --bg-glass: rgba(16, 20, 29, 0.92);
+
+        --bmw-blue: #1c69d4;
+        --bmw-blue-hover: #1656b0;
+        --bmw-blue-glow: rgba(28, 105, 212, 0.35);
+        --bmw-cyan: #38bdf8;
+        --m-red: #e00000;
+
+        --text-primary: #ffffff;
+        --text-secondary: #e2e8f0;
+        --text-muted: #8b9bb4;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-hover: rgba(28, 105, 212, 0.55);
+
+        --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        --container: 1200px;
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 20px;
+        --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: var(--bg-dark);
+        color: var(--text-secondary);
+        font-family: var(--font-stack);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-dark);
+        color: var(--text-secondary);
+        line-height: 1.6;
+        overflow-x: hidden;
+        padding-bottom: 76px;
+      }
+
+      @media (min-width: 768px) {
+        body { padding-bottom: 0; }
+      }
+
+      .container {
+        width: 100%;
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .m-stripe {
+        height: 3px;
+        width: 100%;
+        background: linear-gradient(90deg, #0066bf 0%, #0066bf 33%, #00205b 33%, #00205b 66%, #e00000 66%, #e00000 100%);
+      }
+
+      .m-badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8125rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--bmw-cyan);
+        background: rgba(28, 105, 212, 0.12);
+        border: 1px solid rgba(28, 105, 212, 0.3);
+        padding: 6px 14px;
+        border-radius: 9999px;
+        margin-bottom: 16px;
+      }
+      .m-badge-pill::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--bmw-blue);
+        box-shadow: 0 0 10px var(--bmw-blue);
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--bg-glass);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+      .brand-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+      .brand-logo-img {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-sm);
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 14px var(--bmw-blue-glow);
+      }
+      .brand-name {
+        font-weight: 800;
+        font-size: 1.25rem;
+        letter-spacing: 0.04em;
+        color: var(--text-primary);
+        line-height: 1.1;
+      }
+      .brand-sub {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .nav-desktop {
+        display: none;
+        align-items: center;
+        gap: 24px;
+      }
+      @media (min-width: 900px) {
+        .nav-desktop { display: flex; }
+      }
+      .nav-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        transition: color var(--transition);
+        position: relative;
+        padding: 6px 0;
+      }
+      .nav-link:hover, .nav-link.active { color: #ffffff; }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--bmw-blue);
+        transform: scaleX(0);
+        transition: transform var(--transition);
+      }
+      .nav-link:hover::after, .nav-link.active::after {
+        transform: scaleX(1);
+      }
+
+      .lang-switcher {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 3px;
+        gap: 2px;
+      }
+      .lang-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        font-size: 0.8125rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all var(--transition);
+      }
+      .lang-btn.active {
+        background: var(--bmw-blue);
+        color: #ffffff;
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .header-contacts-box {
+        display: none;
+        flex-direction: column;
+        text-align: right;
+      }
+      @media (min-width: 992px) {
+        .header-contacts-box { display: flex; }
+      }
+      .header-phone-val {
+        font-family: monospace;
+        font-weight: 700;
+        font-size: 0.9375rem;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .header-phone-sub {
+        font-size: 0.6875rem;
+        color: var(--bmw-cyan);
+      }
+
+      .burger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 8px;
+        cursor: pointer;
+      }
+      @media (min-width: 900px) {
+        .burger-btn { display: none; }
+      }
+      .burger-btn span {
+        width: 100%;
+        height: 2px;
+        background: #ffffff;
+        border-radius: 2px;
+      }
+
+      .mobile-menu {
+        display: none;
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border);
+        padding: 20px;
+      }
+      .mobile-menu.open { display: block; }
+      .mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+      .mobile-nav-list a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 13px 24px;
+        font-weight: 700;
+        font-size: 0.9375rem;
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
+      }
+      .btn-primary {
+        background: var(--bmw-blue);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 18px var(--bmw-blue-glow);
+      }
+      .btn-primary:hover {
+        background: var(--bmw-blue-hover);
+        box-shadow: 0 6px 24px rgba(28, 105, 212, 0.6);
+        transform: translateY(-2px);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffffff;
+        border: 1px solid var(--border);
+      }
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+      }
+      .btn-danger {
+        background: var(--m-red);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .btn-sm {
+        padding: 8px 16px;
+        font-size: 0.8125rem;
+      }
+
+      .section-pad {
+        padding: clamp(48px, 6vw, 80px) 0;
+      }
+
+      .section-head {
+        max-width: 65ch;
+        margin-bottom: clamp(28px, 4vw, 48px);
+      }
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.15;
+        color: #ffffff;
+        margin: 0 0 16px 0;
+      }
+      .section-desc {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      .faq-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        max-width: 900px;
+      }
+      .faq-item {
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        transition: border-color var(--transition);
+      }
+      .faq-item.active {
+        border-color: rgba(28, 105, 212, 0.6);
+      }
+      .faq-question-btn {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        padding: 20px 24px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        cursor: pointer;
+      }
+      .faq-icon-arrow {
+        color: var(--bmw-cyan);
+        transition: transform var(--transition);
+        flex-shrink: 0;
+      }
+      .faq-item.active .faq-icon-arrow {
+        transform: rotate(180deg);
+      }
+      .faq-answer {
+        padding: 0 24px 20px 24px;
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.65;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        padding-top: 16px;
+        display: none;
+      }
+      .faq-item.active .faq-answer {
+        display: block;
+      }
+
+      .cta-banner {
+        margin-top: 48px;
+        padding: 32px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .site-footer {
+        background: #06070a;
+        border-top: 1px solid var(--border);
+        padding: 40px 0;
+      }
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        text-align: center;
+      }
+      @media (min-width: 768px) {
+        .footer-inner { flex-direction: row; text-align: left; }
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .footer-links a:hover { color: #ffffff; }
+
+      .mobile-bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        background: rgba(10, 12, 16, 0.96);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid var(--border);
+        padding: 10px 16px;
+        display: flex;
+        gap: 10px;
+      }
+      @media (min-width: 768px) {
+        .mobile-bottom-bar { display: none; }
+      }
+      .mobile-bottom-bar .btn {
+        flex: 1;
+        padding: 12px 14px;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="m-stripe" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-link" aria-label="Bimmeristai Pradžia">
+          <img
+            src="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg"
+            alt="Bimmeristai logotipas"
+            referrerpolicy="no-referrer"
+            class="brand-logo-img"
+          />
+          <div>
+            <div class="brand-name">BIMMERISTAI</div>
+            <div class="brand-sub" data-i18n="brand_sub">KAUNAS · BMW SERVISAS</div>
+          </div>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Navigacija">
+          <a href="index.html#services" class="nav-link" data-i18n="nav_services">Paslaugos</a>
+          <a href="index.html#chain" class="nav-link" data-i18n="nav_chain">Grandinės patikra</a>
+          <a href="index.html#pricing" class="nav-link" data-i18n="nav_prices">Kainoraštis</a>
+          <a href="faq.html" class="nav-link active" data-i18n="nav_faq">D.U.K.</a>
+          <a href="contacts.html" class="nav-link" data-i18n="nav_contacts">Kontaktai</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switcher" role="group" aria-label="Kalbos pasirinkimas">
+            <button type="button" class="lang-btn active" data-lang-btn="lt">LT</button>
+            <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+          </div>
+
+          <div class="header-contacts-box">
+            <a href="tel:+37063305031" class="header-phone-val">+370 633 05031</a>
+            <span class="header-phone-sub" data-i18n="header_diagnostics_role">Diagnostika / Kodavimas</span>
+          </div>
+
+          <a href="index.html#booking" class="btn btn-primary btn-sm" data-i18n="btn_book_short">Registracija</a>
+
+          <button
+            type="button"
+            class="burger-btn"
+            id="burgerBtn"
+            aria-label="Atidaryti meniu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav-list" aria-label="Mobili navigacija">
+          <a href="index.html#services" data-i18n="nav_services">Paslaugos</a>
+          <a href="index.html#chain" data-i18n="nav_chain">Grandinės patikra</a>
+          <a href="index.html#pricing" data-i18n="nav_prices">Kainoraštis</a>
+          <a href="faq.html" data-i18n="nav_faq">D.U.K.</a>
+          <a href="contacts.html" data-i18n="nav_contacts">Kontaktai</a>
+        </nav>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="tel:+37063305031" class="btn btn-secondary" style="width: 100%;">
+            Karolis (Diagnostika): +370 633 05031
+          </a>
+          <a href="tel:+37068644262" class="btn btn-secondary" style="width: 100%;">
+            Karolis (Remontas): +370 686 44262
+          </a>
+          <a href="index.html#booking" class="btn btn-primary" style="width: 100%;" data-i18n="btn_book">
+            Registracija vizitui
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-pad">
+        <div class="container">
+          <div class="section-head">
+            <span class="m-badge-pill" data-i18n="faq_badge">ATSŪRA &amp; INFORMACIJA</span>
+            <h1 class="section-title" data-i18n="faq_page_title">Dažniausiai užduodami klausimai (D.U.K.)</h1>
+            <p class="section-desc" data-i18n="faq_page_desc">
+              Visi atsakymai apie BMW kompiuterinę grandinės patikrą, diagnostikos metodus,
+              kainodarą bei B ir N serijos variklių ypatybes.
+            </p>
+          </div>
+
+          <div class="faq-accordion">
+            <div class="faq-item active">
+              <button type="button" class="faq-question-btn" aria-expanded="true">
+                <span data-i18n="faq_q1">Kokia kaina variklio grandinės patikros?</span>
+                <span class="faq-icon-arrow">▾</span>
+              </button>
+              <div class="faq-answer" data-i18n="faq_a1">
+                Diagnostinis patikrinimas ir grandinės būklės įvertinimas kainuoja 30€.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span data-i18n="faq_q2">Kas geriau: B serijos ar N serijos BMW varikliai?</span>
+                <span class="faq-icon-arrow">▾</span>
+              </button>
+              <div class="faq-answer" data-i18n="faq_a2">
+                B serijos varikliuose yra ištaisyta dauguma N serijos klaidų – grandinės tarnauja daug geriau, indėklai patikimesni, o varikliai atlaiko didesnę galią.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span data-i18n="faq_q3">Kokiems varikliams galima atlikti kompiuterinę grandinės patikrą?</span>
+                <span class="faq-icon-arrow">▾</span>
+              </button>
+              <div class="faq-answer" data-i18n="faq_a3">
+                Visiems B serijos (B38, B48, B58, B47 ir t.t.) benzininiams ir dyzeliniams BMW varikliams (F3x, F1x, G serijai ir kt.).
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span data-i18n="faq_q4">Kaip veikia grandinės diagnostika neardant variklio?</span>
+                <span class="faq-icon-arrow">▾</span>
+              </button>
+              <div class="faq-answer" data-i18n="faq_a4">
+                Dyzeliniams B47 varikliams kompiuteris tiksliai rodo veleno kampą laipsniais. Benzininiams varikliams diagnostika atlieka apsukų kėlimo testą ir nustato išsitampymą. Jei parodoma keitimo riba, rekomenduojama keisti.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span data-i18n="faq_q5">Ar prieš atvykstant būtina registruotis?</span>
+                <span class="faq-icon-arrow">▾</span>
+              </button>
+              <div class="faq-answer" data-i18n="faq_a5">
+                Taip, registracija prieš atvykstant yra griežtai būtina, kadangi kiekvienam BMW skiriamas individualus laikas ir diagnostinė įranga.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-question-btn" aria-expanded="false">
+                <span data-i18n="faq_q6">Kuriam Karoliui skambinti, jei reikia ir patikros, ir remonto?</span>
+                <span class="faq-icon-arrow">▾</span>
+              </button>
+              <div class="faq-answer" data-i18n="faq_a6">
+                Elektroninei diagnostikai, grandinės patikrai laipsniais, CarPlay ir kodavimui skambinkite Karoliui tel. +370 633 05031. Mechaniniam remontui ir agregatų keitimui – Karoliui tel. +370 686 44262.
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-banner">
+            <div>
+              <h3 style="margin: 0 0 6px 0; font-size: 1.35rem; color: #ffffff;" data-i18n="cta_box_title">Turite papildomų klausimų apie savo BMW?</h3>
+              <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;" data-i18n="cta_box_desc">Paskambinkite tiesiogiai arba užregistruokite automobilį patikrai internetu.</p>
+            </div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="tel:+37063305031" class="btn btn-secondary" data-i18n="btn_call_karolis1">Skambinti: +370 633 05031</a>
+              <a href="index.html#booking" class="btn btn-primary" data-i18n="btn_book">Registruotis patikrai</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="index.html" class="brand-link">
+          <img
+            src="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg"
+            alt="Bimmeristai logotipas"
+            referrerpolicy="no-referrer"
+            class="brand-logo-img"
+          />
+          <div>
+            <div class="brand-name">BIMMERISTAI</div>
+            <div class="brand-sub">KAUNAS · BMW SPECIALIZACIJA</div>
+          </div>
+        </a>
+
+        <div class="footer-links">
+          <a href="index.html#services" data-i18n="nav_services">Paslaugos</a>
+          <a href="index.html#chain" data-i18n="nav_chain">Grandinės patikra</a>
+          <a href="index.html#pricing" data-i18n="nav_prices">Kainoraštis</a>
+          <a href="faq.html" data-i18n="nav_faq">D.U.K.</a>
+          <a href="contacts.html" data-i18n="nav_contacts">Kontaktai</a>
+        </div>
+
+        <div style="font-size: 0.85rem; color: var(--text-muted);">
+          © 2026 Bimmeristai Kaunas. Visos teisės saugomos.
+        </div>
+      </div>
+    </footer>
+
+    <div class="mobile-bottom-bar" aria-label="Greiti veiksmai">
+      <a href="tel:+37063305031" class="btn btn-secondary" data-i18n="btn_call">Skambinti</a>
+      <a href="index.html#booking" class="btn btn-primary" data-i18n="btn_book">Registruotis</a>
+    </div>
+
+    <script>
+      (function () {
+        'use strict';
+
+        const I18N = {
+          lt: {
+            brand_sub: "KAUNAS · BMW SERVISAS",
+            nav_services: "Paslaugos",
+            nav_chain: "Grandinės patikra",
+            nav_prices: "Kainoraštis",
+            nav_faq: "D.U.K.",
+            nav_contacts: "Kontaktai",
+            header_diagnostics_role: "Diagnostika / Kodavimas",
+            btn_book_short: "Registracija",
+            btn_book: "Registruotis patikrai",
+            btn_call: "Skambinti",
+            btn_call_karolis1: "Skambinti: +370 633 05031",
+            faq_badge: "ATSAKYMAI & INFORMACIJA",
+            faq_page_title: "Dažniausiai užduodami klausimai (D.U.K.)",
+            faq_page_desc: "Visi atsakymai apie BMW kompiuterinę grandinės patikrą, diagnostikos metodus, kainodarą bei B ir N serijos variklių ypatybes.",
+            faq_q1: "Kokia kaina variklio grandinės patikros?",
+            faq_a1: "Diagnostinis patikrinimas ir grandinės būklės įvertinimas kainuoja 30€.",
+            faq_q2: "Kas geriau: B serijos ar N serijos BMW varikliai?",
+            faq_a2: "B serijos varikliuose yra ištaisyta dauguma N serijos klaidų – grandinės tarnauja daug geriau, indėklai patikimesni, o varikliai atlaiko didesnę galią.",
+            faq_q3: "Kokiems varikliams galima atlikti kompiuterinę grandinės patikrą?",
+            faq_a3: "Visiems B serijos (B38, B48, B58, B47 ir t.t.) benzininiams ir dyzeliniams BMW varikliams (F3x, F1x, G serijai ir kt.).",
+            faq_q4: "Kaip veikia grandinės diagnostika neardant variklio?",
+            faq_a4: "Dyzeliniams B47 varikliams kompiuteris tiksliai rodo veleno kampą laipsniais. Benzininiams varikliams diagnostika atlieka apsukų kėlimo testą ir nustato išsitampymą. Jei parodoma keitimo riba, rekomenduojama keisti.",
+            faq_q5: "Ar prieš atvykstant būtina registruotis?",
+            faq_a5: "Taip, registracija prieš atvykstant yra griežtai būtina, kadangi kiekvienam BMW skiriamas individualus laikas ir diagnostinė įranga.",
+            faq_q6: "Kuriam Karoliui skambinti, jei reikia ir patikros, ir remonto?",
+            faq_a6: "Elektroninei diagnostikai, grandinės patikrai laipsniais, CarPlay ir kodavimui skambinkite Karoliui tel. +370 633 05031. Mechaniniam remontui ir agregatų keitimui – Karoliui tel. +370 686 44262.",
+            cta_box_title: "Turite papildomų klausimų apie savo BMW?",
+            cta_box_desc: "Paskambinkite tiesiogiai arba užregistruokite automobilį patikrai internetu."
+          },
+          en: {
+            brand_sub: "KAUNAS · BMW SERVICE",
+            nav_services: "Services",
+            nav_chain: "Chain Check",
+            nav_prices: "Pricing",
+            nav_faq: "FAQ",
+            nav_contacts: "Contacts",
+            header_diagnostics_role: "Diagnostics / Coding",
+            btn_book_short: "Booking",
+            btn_book: "Book Inspection",
+            btn_call: "Call",
+            btn_call_karolis1: "Call: +370 633 05031",
+            faq_badge: "ANSWERS & INSIGHTS",
+            faq_page_title: "Frequently Asked Questions (FAQ)",
+            faq_page_desc: "Everything you need to know about BMW engine timing chain inspection, diagnostics, pricing, and B vs N series engines.",
+            faq_q1: "What is the price of the engine timing chain inspection?",
+            faq_a1: "Computer diagnostic inspection and timing chain elongation analysis costs 30€.",
+            faq_q2: "Which is better: BMW B-series or N-series engines?",
+            faq_a2: "B-series engines fixed most flaws of the N-series: timing chains last substantially longer, rod bearings are far more durable, and engines handle power better.",
+            faq_q3: "Which engines can undergo computer timing chain inspection?",
+            faq_a3: "All B-series (B38, B48, B58, B47 etc.) petrol and diesel BMW engines (F3x, F1x, G series and others).",
+            faq_q4: "How does timing chain diagnostics work without engine disassembly?",
+            faq_a4: "For B47 diesel engines, ISTA+ computer telemetry reads the exact camshaft phase angle in degrees (°). For petrol engines, an automated rev test calculates chain elongation and threshold.",
+            faq_q5: "Is registration required before visiting?",
+            faq_a5: "Yes, prior registration is strictly required so that we allocate dedicated workshop time and OEM tools for your vehicle.",
+            faq_q6: "Which Karolis should I call for my request?",
+            faq_a6: "For diagnostics, timing chain angle check, CarPlay, and coding, call Karolis at +370 633 05031. For mechanical repairs, chain replacements, and chassis work, call Karolis at +370 686 44262.",
+            cta_box_title: "Have more questions about your BMW?",
+            cta_box_desc: "Call our technicians directly or book your diagnostic slot online."
+          }
+        };
+
+        let currentLang = 'lt';
+        try {
+          const saved = localStorage.getItem('bimmeristai_lang');
+          if (saved === 'en' || saved === 'lt') {
+            currentLang = saved;
+          } else if (navigator.language && navigator.language.startsWith('en')) {
+            currentLang = 'en';
+          }
+        } catch (e) {}
+
+        function applyLanguage(lang) {
+          currentLang = lang;
+          document.documentElement.lang = lang;
+          try {
+            localStorage.setItem('bimmeristai_lang', lang);
+          } catch (e) {}
+
+          document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
+          });
+
+          const dict = I18N[lang] || I18N.lt;
+          document.querySelectorAll('[data-i18n]').forEach(function (el) {
+            const key = el.getAttribute('data-i18n');
+            if (dict[key]) {
+              el.textContent = dict[key];
+            }
+          });
+        }
+
+        document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            applyLanguage(btn.getAttribute('data-lang-btn'));
+          });
+        });
+
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (burgerBtn && mobileMenu) {
+          burgerBtn.addEventListener('click', function () {
+            const open = mobileMenu.classList.toggle('open');
+            burgerBtn.setAttribute('aria-expanded', String(open));
+          });
+        }
+
+        document.querySelectorAll('.faq-question-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const item = btn.closest('.faq-item');
+            if (!item) return;
+            const wasActive = item.classList.contains('active');
+            item.classList.toggle('active', !wasActive);
+            btn.setAttribute('aria-expanded', String(!wasActive));
+          });
+        });
+
+        applyLanguage(currentLang);
+      })();
+    </script>
+  </body>
+</html>
