@@ -77,43 +77,72 @@
 
           <button
             type="button"
-            class="hamburger-btn"
+            class="burger-btn"
             id="mobile-nav-toggle"
             aria-label="Atverti meniu"
             aria-expanded="false"
+            aria-controls="mobile-menu"
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
           </button>
         </div>
       </div>
 
-      <div class="mobile-drawer" id="mobile-nav-drawer" aria-hidden="true">
-        <div class="mobile-drawer-inner">
-          <nav class="mobile-nav-links" aria-label="Mobili navigacija">
-            <a href="index.html#services" class="mobile-link" data-i18n="nav_services">Paslaugos</a>
-            <a href="index.html#simulator" class="mobile-link" data-i18n="nav_simulator">Kodavimo simuliatorius</a>
-            <a href="index.html#chain-check" class="mobile-link" data-i18n="nav_chain">Grandinės patikra (30€)</a>
-            <a href="index.html#how-it-works" class="mobile-link" data-i18n="nav_steps">Kaip dirbame</a>
-            <a href="index.html#pricing" class="mobile-link" data-i18n="nav_prices">Kainoraštis</a>
-            <a href="index.html#reviews" class="mobile-link" data-i18n="nav_reviews">Atsiliepimai</a>
-            <a href="faq.html" class="mobile-link" data-i18n="nav_faq">D.U.K.</a>
-            <a href="contacts.html" class="mobile-link" data-i18n="nav_contacts">Kontaktai</a>
+      <!-- Mobilus visas ekranas / išskleidžiamas meniu -->
+      <div
+        class="mobile-menu-overlay"
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobili navigacija"
+        aria-hidden="true"
+      >
+        <div class="mobile-menu-inner">
+          <nav class="mobile-menu-nav" aria-label="Mobili navigacija">
+            <div class="mobile-menu-item">
+              <a href="index.html" class="mobile-menu-link" data-nav-link="home">
+                <span class="link-num">01</span>
+                <span class="link-label" data-i18n="nav_home">Pradžia</span>
+              </a>
+            </div>
+            <div class="mobile-menu-item">
+              <a href="faq.html" class="mobile-menu-link active" data-nav-link="faq" aria-current="page">
+                <span class="link-num">02</span>
+                <span class="link-label" data-i18n="nav_faq">D.U.K.</span>
+              </a>
+            </div>
+            <div class="mobile-menu-item">
+              <a href="contacts.html" class="mobile-menu-link" data-nav-link="contacts">
+                <span class="link-num">03</span>
+                <span class="link-label" data-i18n="nav_contacts">Kontaktai</span>
+              </a>
+            </div>
+            <div class="mobile-menu-item">
+              <a href="index.html#booking" class="mobile-menu-link" data-nav-link="book">
+                <span class="link-num">04</span>
+                <span class="link-label" data-i18n="nav_book">Registracija</span>
+              </a>
+            </div>
           </nav>
 
-          <div class="mobile-drawer-footer">
-            <div class="mobile-drawer-contacts">
-              <a href="tel:+37063305031" class="btn btn-primary" style="width: 100%;">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <span>Karolis (Diagnostika): +370 633 05031</span>
-              </a>
-              <a href="tel:+37068644262" class="btn btn-secondary" style="width: 100%;">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                <span>Karolis (Remontas): +370 686 44262</span>
-              </a>
-              <a href="index.html#booking" class="btn btn-white" style="width: 100%;" data-i18n="btn_book">
-                Registracija vizitui
+          <div class="mobile-menu-footer">
+            <a href="tel:+37063305031" class="btn btn-primary mobile-call-btn">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span data-i18n="mobile_call_primary">Skambinti: +370 633 05031</span>
+            </a>
+
+            <div class="mobile-bottom-row">
+              <div class="mobile-lang-switch" role="group" aria-label="Kalbos pasirinkimas / Language selection">
+                <button type="button" class="mobile-lang-btn active" data-lang-btn="lt">LT</button>
+                <span class="lang-sep">|</span>
+                <button type="button" class="mobile-lang-btn" data-lang-btn="en">EN</button>
+              </div>
+
+              <a href="tel:+37068644262" class="mobile-secondary-phone" title="Karolis (Remontas)">
+                <span data-i18n="mobile_repair_label">Remontas:</span>
+                <span class="font-tabular">+370 686 44262</span>
               </a>
             </div>
           </div>

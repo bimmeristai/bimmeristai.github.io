@@ -459,93 +459,382 @@ body {
   }
 }
 
-/* Hamburgeris */
+/* ---------------------------------------------------- */
+/* 5.1 MOBILUS BURGER MYGTUKAS IR PILNO EKRANO MENIU    */
+/* ---------------------------------------------------- */
+
+/* Burger mygtukas (Top-right, min 48x48px tap target) */
+.burger-btn,
 .hamburger-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
-  width: 42px;
-  height: 42px;
+  align-items: center;
+  gap: 6px;
+  min-width: 48px;
+  min-height: 48px;
+  width: 48px;
+  height: 48px;
+  padding: 12px 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-sm);
-  padding: 9px;
   cursor: pointer;
+  position: relative;
+  z-index: 1003;
+  margin-right: env(safe-area-inset-right, 0px);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  transition: transform 150ms cubic-bezier(.2, .8, .2, 1), background-color 200ms ease, border-color 200ms ease;
 }
 
-@media (min-width: 960px) {
-  .hamburger-btn {
-    display: none;
-  }
+.burger-btn:hover,
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(77, 163, 255, 0.3);
 }
 
+.burger-btn:active,
+.hamburger-btn:active {
+  transform: scale(0.92);
+}
+
+.burger-btn:focus-visible,
+.hamburger-btn:focus-visible {
+  outline: 2px solid #1C69D4;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(28, 105, 212, 0.35);
+}
+
+/* 3 plonos linijos, kurios transformuojasi į "X" per transform ir opacity */
+.burger-btn span,
+.burger-btn .burger-line,
 .hamburger-btn span {
-  width: 100%;
+  display: block;
+  width: 24px;
   height: 2px;
-  background: #ffffff;
+  background-color: #ffffff;
   border-radius: 2px;
-  transition: transform var(--transition), opacity var(--transition);
+  transform-origin: center;
+  transition: transform 400ms cubic-bezier(.2, .8, .2, 1), opacity 400ms cubic-bezier(.2, .8, .2, 1);
+  will-change: transform, opacity;
 }
 
+/* Morfas į "X" */
+.burger-btn[aria-expanded="true"] span:nth-child(1),
+.burger-btn[aria-expanded="true"] .burger-line:nth-child(1),
+.burger-btn.is-active span:nth-child(1),
 .hamburger-btn[aria-expanded="true"] span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
+.burger-btn[aria-expanded="true"] span:nth-child(2),
+.burger-btn[aria-expanded="true"] .burger-line:nth-child(2),
+.burger-btn.is-active span:nth-child(2),
 .hamburger-btn[aria-expanded="true"] span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
+.burger-btn[aria-expanded="true"] span:nth-child(3),
+.burger-btn[aria-expanded="true"] .burger-line:nth-child(3),
+.burger-btn.is-active span:nth-child(3),
 .hamburger-btn[aria-expanded="true"] span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobilus išskleidžiamas meniu */
+/* Pilno ekrano juodas meniu užsklanda (Full-screen black overlay su mėlynu švytėjimu) */
+.mobile-menu-overlay,
 .mobile-drawer {
-  display: none;
   position: fixed;
-  top: 75px;
+  inset: 0;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.98);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #000000;
+  background-image: radial-gradient(circle at 50% 25%, rgba(28, 105, 212, 0.22) 0%, rgba(11, 61, 145, 0.08) 50%, #000000 85%);
+  z-index: 1000;
+  box-sizing: border-box;
+  padding-top: calc(75px + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
   overflow-y: auto;
-  border-top: 1px solid var(--border-hairline);
-}
-
-.mobile-drawer.open {
-  display: block;
-}
-
-.mobile-drawer-inner {
-  padding: 24px 20px calc(80px + env(safe-area-inset-bottom, 0px)) 20px;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  justify-content: space-between;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 300ms cubic-bezier(.2, .8, .2, 1), transform 300ms cubic-bezier(.2, .8, .2, 1), visibility 300ms cubic-bezier(.2, .8, .2, 1);
 }
 
+.mobile-menu-overlay.is-open,
+.mobile-drawer.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Kai meniu atvertas, užtikriname teisingą sluoksniavimą */
+body.mobile-menu-open .site-header {
+  z-index: 1002;
+}
+
+.mobile-menu-inner,
+.mobile-drawer-inner {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+/* Navigacijos nuorodos */
+.mobile-menu-nav,
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
+  gap: 6px;
+  padding-top: 10px;
+}
+
+/* Nuorodų elementai su pakopiniu (staggered) atsiradimu */
+.mobile-menu-item {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 320ms cubic-bezier(.2, .8, .2, 1), transform 320ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.mobile-menu-overlay.is-open .mobile-menu-item:nth-child(1),
+.mobile-drawer.open .mobile-menu-item:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 60ms;
+}
+
+.mobile-menu-overlay.is-open .mobile-menu-item:nth-child(2),
+.mobile-drawer.open .mobile-menu-item:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 130ms;
+}
+
+.mobile-menu-overlay.is-open .mobile-menu-item:nth-child(3),
+.mobile-drawer.open .mobile-menu-item:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 200ms;
+}
+
+.mobile-menu-overlay.is-open .mobile-menu-item:nth-child(4),
+.mobile-drawer.open .mobile-menu-item:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 270ms;
+}
+
+.mobile-menu-overlay.is-open .mobile-menu-footer,
+.mobile-drawer.open .mobile-menu-footer {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 340ms;
+}
+
+/* Didelės nuorodos (clamp 32-48px, bold grotesque, tight tracking) */
+.mobile-menu-link {
+  display: flex;
+  align-items: baseline;
   gap: 16px;
-}
-
-.mobile-link {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
+  padding: 12px 0;
   text-decoration: none;
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  -webkit-tap-highlight-color: transparent;
+  transition: color 200ms ease, border-color 200ms ease, transform 200ms ease;
 }
 
-.mobile-drawer-contacts {
+.mobile-menu-link:hover {
+  color: var(--bmw-light-blue);
+  border-color: rgba(77, 163, 255, 0.35);
+  transform: translateX(4px);
+}
+
+.mobile-menu-link:focus-visible {
+  outline: 2px solid #1C69D4;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.mobile-menu-link .link-num {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1C69D4;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.mobile-menu-link .link-label {
+  font-size: clamp(32px, 7.5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+/* Aktyvus puslapis */
+.mobile-menu-link[aria-current="page"],
+.mobile-menu-link.active {
+  color: var(--bmw-light-blue);
+  border-bottom-color: rgba(77, 163, 255, 0.4);
+}
+
+.mobile-menu-link[aria-current="page"] .link-num,
+.mobile-menu-link.active .link-num {
+  color: #ffffff;
+}
+
+.mobile-menu-link[aria-current="page"] .link-label,
+.mobile-menu-link.active .link-label {
+  position: relative;
+}
+
+.mobile-menu-link[aria-current="page"] .link-label::after,
+.mobile-menu-link.active .link-label::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1C69D4;
+  box-shadow: 0 0 10px #1C69D4;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+/* Apatinė dalis (Bottom area) */
+.mobile-menu-footer {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  padding-top: 16px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 320ms cubic-bezier(.2, .8, .2, 1), transform 320ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.mobile-call-btn {
+  width: 100%;
+  min-height: 52px;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 20px var(--bmw-blue-glow);
+}
+
+.mobile-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+}
+
+.mobile-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mobile-lang-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  -webkit-tap-highlight-color: transparent;
+  transition: all var(--transition);
+}
+
+.mobile-lang-btn:hover {
+  color: #ffffff;
+}
+
+.mobile-lang-btn:focus-visible {
+  outline: 2px solid #1C69D4;
+}
+
+.mobile-lang-btn.active {
+  color: #ffffff;
+  background: rgba(28, 105, 212, 0.25);
+  border-color: rgba(77, 163, 255, 0.4);
+  box-shadow: 0 0 10px rgba(28, 105, 212, 0.3);
+}
+
+.mobile-secondary-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-secondary-phone:hover {
+  color: #ffffff;
+}
+
+.mobile-secondary-phone:focus-visible {
+  outline: 2px solid #1C69D4;
+}
+
+/* Paslėpti ant desktop ekrano (>= 960px) */
+@media (min-width: 960px) {
+  .burger-btn,
+  .hamburger-btn,
+  .mobile-menu-overlay,
+  .mobile-drawer {
+    display: none !important;
+  }
+}
+
+/* Reduced motion palaikymas */
+@media (prefers-reduced-motion: reduce) {
+  .burger-btn,
+  .hamburger-btn,
+  .burger-btn span,
+  .burger-btn .burger-line,
+  .hamburger-btn span,
+  .mobile-menu-overlay,
+  .mobile-drawer,
+  .mobile-menu-item,
+  .mobile-menu-footer,
+  .mobile-menu-link {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 /* 6. HERO SEKCIJA */

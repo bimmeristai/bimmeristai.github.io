@@ -11,6 +11,7 @@
   const I18N = {
     lt: {
       brand_sub: "KAUNAS · BMW SPECIALIZACIJA",
+      nav_home: "Pradžia",
       nav_services: "Paslaugos",
       nav_simulator: "Kodavimas",
       nav_chain: "Grandinės patikra",
@@ -19,6 +20,9 @@
       nav_reviews: "Atsiliepimai",
       nav_faq: "D.U.K.",
       nav_contacts: "Kontaktai",
+      nav_book: "Registracija",
+      mobile_call_primary: "Skambinti: +370 633 05031",
+      mobile_repair_label: "Remontas:",
       btn_book_short: "Registracija",
       btn_book: "Registruotis vizitui",
       btn_call: "Skambinti",
@@ -212,6 +216,7 @@
     },
     en: {
       brand_sub: "KAUNAS · BMW SPECIALIZATION",
+      nav_home: "Home",
       nav_services: "Services",
       nav_simulator: "Coding",
       nav_chain: "Chain Check",
@@ -220,6 +225,9 @@
       nav_reviews: "Reviews",
       nav_faq: "FAQ",
       nav_contacts: "Contacts",
+      nav_book: "Book Visit",
+      mobile_call_primary: "Call: +370 633 05031",
+      mobile_repair_label: "Repairs:",
       btn_book_short: "Booking",
       btn_book: "Book Inspection",
       btn_call: "Call",
@@ -605,6 +613,16 @@
       }
     });
 
+    // Sinchronizuoti mobilaus meniu mygtuko aria-label
+    const mobileToggleBtn = document.getElementById('mobile-nav-toggle');
+    if (mobileToggleBtn) {
+      const isOpen = mobileToggleBtn.getAttribute('aria-expanded') === 'true';
+      mobileToggleBtn.setAttribute(
+        'aria-label',
+        isOpen ? (lang === 'en' ? 'Close menu' : 'Užverti meniu') : (lang === 'en' ? 'Open menu' : 'Atverti meniu')
+      );
+    }
+
     // Atnaujinti interaktyvius modulius su nauja kalba
     if (typeof updateEngineChecker === 'function') {
       updateEngineChecker();
@@ -821,36 +839,177 @@
     });
   }
 
-  // 6. MOBILUS MENIU (DRAWER)
+  // 6. MOBILUS MENIU (FULLSCREEN OVERLAY SU BURGER MORFU)
   function initMobileMenu() {
     const toggleBtn = document.getElementById('mobile-nav-toggle');
-    const drawer = document.getElementById('mobile-nav-drawer');
-    if (!toggleBtn || !drawer) return;
+    const menu = document.getElementById('mobile-menu') || document.getElementById('mobile-nav-drawer');
+    if (!toggleBtn || !menu) return;
 
-    toggleBtn.addEventListener('click', function () {
-      const isOpen = drawer.classList.toggle('open');
-      toggleBtn.setAttribute('aria-expanded', String(isOpen));
-      drawer.setAttribute('aria-hidden', String(!isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+    let isOpen = false;
+    let savedScrollY = 0;
+
+    // iOS Safari saugus slankiojimo užrakinimas
+    function lockScroll() {
+      savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + savedScrollY + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('mobile-menu-open');
+    }
+
+    function unlockScroll() {
+      const topStr = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      document.body.classList.remove('mobile-menu-open');
+      const restoreY = topStr ? Math.abs(parseInt(topStr, 10)) : savedScrollY;
+      window.scrollTo(0, restoreY);
+    }
+
+    function getFocusableElements() {
+      return Array.from(menu.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+    }
+
+    function handleKeyDown(e) {
+      if (!isOpen) return;
+
+      // Uždaryti paspaudus Escape
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeMenu();
+        toggleBtn.focus();
+        return;
+      }
+
+      // Focus trap klaviatūros navigacijai Tab / Shift+Tab
+      if (e.key === 'Tab') {
+        const focusables = getFocusableElements();
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first || document.activeElement === toggleBtn) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+    }
+
+    function openMenu() {
+      if (isOpen) return;
+      isOpen = true;
+      menu.classList.add('is-open', 'open');
+      menu.setAttribute('aria-hidden', 'false');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.classList.add('is-active');
+      toggleBtn.setAttribute('aria-label', currentLang === 'en' ? 'Close menu' : 'Užverti meniu');
+
+      lockScroll();
+      document.addEventListener('keydown', handleKeyDown);
+
+      // Nukreipti fokusą į pirmą nuorodą
+      requestAnimationFrame(function () {
+        const focusables = getFocusableElements();
+        if (focusables.length > 0) {
+          focusables[0].focus();
+        }
+      });
+    }
+
+    function closeMenu() {
+      if (!isOpen) return;
+      isOpen = false;
+      menu.classList.remove('is-open', 'open');
+      menu.setAttribute('aria-hidden', 'true');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.classList.remove('is-active');
+      toggleBtn.setAttribute('aria-label', currentLang === 'en' ? 'Open menu' : 'Atverti meniu');
+
+      unlockScroll();
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+
+    // Burger mygtuko paspaudimas (atidaryti / uždaryti)
+    toggleBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
-    // Uždarymas paspaudus ant nuorodos
-    drawer.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        drawer.classList.remove('open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        drawer.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+    // Uždaryti paspaudus ant tamsios užsklandos fono (tap outside)
+    menu.addEventListener('click', function (e) {
+      if (e.target === menu) {
+        closeMenu();
+        toggleBtn.focus();
+      }
+    });
+
+    // Uždarymas paspaudus ant nuorodų ir sklandus slinkimas į #booking
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        const href = link.getAttribute('href') || '';
+
+        // Paspaudus "Registracija" (#booking) šiame puslapyje
+        const isBookingTarget = href === '#booking' || href.endsWith('#booking');
+        const isCurrentIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || !window.location.pathname.includes('.');
+
+        if (isBookingTarget && isCurrentIndex) {
+          const bookingEl = document.getElementById('booking');
+          if (bookingEl) {
+            e.preventDefault();
+            closeMenu();
+            toggleBtn.focus();
+            setTimeout(function () {
+              bookingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              if (history && history.pushState) {
+                history.pushState(null, '', '#booking');
+              }
+            }, 80);
+            return;
+          }
+        }
+
+        if (href.startsWith('#') && href.length > 1) {
+          const targetEl = document.querySelector(href);
+          if (targetEl) {
+            e.preventDefault();
+            closeMenu();
+            setTimeout(function () {
+              targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              if (history && history.pushState) {
+                history.pushState(null, '', href);
+              }
+            }, 80);
+            return;
+          }
+        }
+
+        // Išorinis ar tel: linkas - tiesiog užverti meniu
+        closeMenu();
       });
     });
 
-    // Uždarymas paspaudus Escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && drawer.classList.contains('open')) {
-        drawer.classList.remove('open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        drawer.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+    // Uždaryti meniu jei langas praplečiamas virš desktop ribos (>= 960px)
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 960 && isOpen) {
+        closeMenu();
       }
     });
   }
