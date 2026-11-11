@@ -1,600 +1,918 @@
 <!doctype html>
-<html lang="ru">
+<html lang="lt">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Кодирование и активация скрытых функций BMW | Профессиональный сервис</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Bimmeristai Kaunas – BMW Diagnostika, Kodavimas ir Remontas</title>
     <meta
       name="description"
-      content="Профессиональное кодирование, русификация, активация CarPlay, обновление ПО и скрытых опций только для автомобилей BMW (E, F, G, I-серии). Дилерское оборудование ICOM Next, гарантия безопасности блоков."
+      content="Profesionali BMW kompiuterinė variklio grandinių patikra neardant variklio (30€), CarPlay aktyvavimas, OEM ISTA+ diagnostika ir remontas Kaune. Registracija būtina!"
     />
-    <meta name="keywords" content="кодирование bmw, активация скрытых функций bmw, carplay bmw, русификация bmw, отключение старт стоп bmw, esys bmw, icom bmw" />
+    <meta
+      name="keywords"
+      content="bmw diagnostika kaunas, bmw kodavimas kaunas, bmw grandines patikra, b47 grandine, b57 grandine, b58 grandine, carplay bmw kaunas, bimmeristai, bmw remontas kaune, e-sys bmw kaunas"
+    />
 
-    <!-- Open Graph / VK / Telegram -->
+    <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Кодирование и активация скрытых функций BMW" />
-    <meta property="og:description" content="Безопасное кодирование и дооснащение исключительно автомобилей BMW. Оригинальный софт E-Sys и ISTA+." />
-    <meta property="og:image" content="./assets/img/og-preview.png" />
-    <meta name="theme-color" content="#0a0c10" />
+    <meta property="og:title" content="Bimmeristai Kaunas – BMW Diagnostika, Kodavimas ir Remontas" />
+    <meta
+      property="og:description"
+      content="Kompiuterinė variklio grandinių patikra neardant variklio (30€), CarPlay aktyvavimas, žemėlapių atnaujinimas ir remontas Kaune."
+    />
+    <meta property="og:image" content="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg" />
+    <meta property="og:locale" content="lt_LT" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bimmeristai Kaunas – BMW Specializuotas Servisas" />
+    <meta name="twitter:description" content="Profesionali BMW kompiuterinė grandinių patikra (30€) ir kodavimas Kaune." />
+    <meta name="twitter:image" content="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg" />
+
+    <!-- iOS & PWA specifics -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="alternate" hreflang="lt" href="index.html" />
+    <link rel="alternate" hreflang="en" href="index.html" />
 
-    <!-- Google Fonts с font-display: swap для максимальной скорости -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700&family=Sora:wght@700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- External stylesheet fallback (same directory) -->
+    <link rel="stylesheet" href="style.css" />
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Schema.org LocalBusiness JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Bimmeristai Kaunas",
+        "image": "https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg",
+        "description": "Specializuotas BMW servisas Kaune: variklio grandinių kompiuterinė patikra (30€), CarPlay, kodavimas ir remontas.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kaunas",
+          "addressCountry": "LT"
+        },
+        "telephone": "+37063305031",
+        "email": "work.bimmeristai@gmail.com",
+        "priceRange": "€€",
+        "openingHours": "Mo-Fr 09:00-18:00"
+      }
+    </script>
   </head>
   <body>
-    <!-- Верхняя тонкая полоса M-Performance -->
-    <div class="m-stripe" aria-hidden="true"></div>
+    <!-- BMW Motorsport M-stripe viršutinė linija -->
+    <div class="m-stripe-top" aria-hidden="true"></div>
 
-    <!-- 1. ШАПКА / НАВИГАЦИЯ -->
-    <header class="site-header">
+    <!-- 1. HEADER / NAVIGACIJA -->
+    <header class="site-header" id="site-header">
       <div class="container header-inner">
-        <a href="./" class="brand-link" aria-label="Bimmer Coding Studio Главная">
-          <div class="brand-symbol">M</div>
-          <div class="brand-meta">
-            <span class="brand-name">BIMMER CODING</span>
-            <span class="brand-sub">EXCLUSIVE BMW SERVICE</span>
+        <a href="index.html" class="brand-link" aria-label="Bimmeristai Kaunas">
+          <img
+            src="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg"
+            alt="Bimmeristai Logo"
+            class="brand-logo"
+            width="38"
+            height="38"
+            loading="eager"
+          />
+          <div class="brand-text">
+            <span class="brand-title">BIMMERISTAI</span>
+            <span class="brand-subtitle" data-i18n="brand_sub">KAUNAS · BMW SPECIALIZACIJA</span>
           </div>
         </a>
 
-        <nav class="nav-desktop" aria-label="Основная навигация">
-          <a href="#services" class="nav-link">Услуги</a>
-          <a href="#advantages" class="nav-link">Преимущества</a>
-          <a href="#steps" class="nav-link">Как работаем</a>
-          <a href="#prices" class="nav-link">Цены</a>
-          <a href="#reviews" class="nav-link">Отзывы</a>
-          <a href="./faq/" class="nav-link">FAQ</a>
-          <a href="./contacts/" class="nav-link">Контакты</a>
+        <!-- Desktop navigacija -->
+        <nav class="desktop-nav" aria-label="Pagrindinė navigacija">
+          <a href="#services" class="nav-item" data-i18n="nav_services">Paslaugos</a>
+          <a href="#simulator" class="nav-item" data-i18n="nav_simulator">Kodavimas</a>
+          <a href="#chain-check" class="nav-item" data-i18n="nav_chain">Grandinės patikra</a>
+          <a href="#how-it-works" class="nav-item" data-i18n="nav_steps">Kaip dirbame</a>
+          <a href="#pricing" class="nav-item" data-i18n="nav_prices">Kainoraštis</a>
+          <a href="#reviews" class="nav-item" data-i18n="nav_reviews">Atsiliepimai</a>
+          <a href="faq.html" class="nav-item" data-i18n="nav_faq">D.U.K.</a>
+          <a href="contacts.html" class="nav-item" data-i18n="nav_contacts">Kontaktai</a>
         </nav>
 
-        <div class="header-contacts">
-          <a href="tel:+79990000000" class="header-phone-link">
-            <span class="header-phone-number">+7 (999) 000-00-00</span>
-            <span class="header-phone-label">Пн–Вс 10:00–21:00</span>
-          </a>
-          <a href="#booking" class="btn btn-primary btn-sm">Записаться</a>
-        </div>
+        <!-- Header dešinė: Kalbos perjungiklis, skambutis, registracija -->
+        <div class="header-right">
+          <!-- Kalbos perjungiklis [LT | EN] -->
+          <div class="lang-switch" role="group" aria-label="Kalbos pasirinkimas / Language selection">
+            <button type="button" class="lang-btn active" data-lang-btn="lt" title="Lietuvių k.">LT</button>
+            <span class="lang-sep">|</span>
+            <button type="button" class="lang-btn" data-lang-btn="en" title="English">EN</button>
+          </div>
 
-        <button
-          type="button"
-          class="burger-btn"
-          id="burgerBtn"
-          aria-label="Открыть меню навигации"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <a href="tel:+37063305031" class="header-call-btn" title="Skambinti Karoliui (Diagnostika)">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span class="font-tabular">+370 633 05031</span>
+          </a>
+
+          <a href="#booking" class="btn btn-outline btn-sm header-book-btn" data-i18n="btn_book_short">
+            Registracija
+          </a>
+
+          <!-- Hamburgeris mobiliam -->
+          <button
+            type="button"
+            class="hamburger-btn"
+            id="mobile-nav-toggle"
+            aria-label="Atverti meniu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
 
-      <!-- Мобильное выпадающее меню -->
-      <div class="mobile-menu" id="mobileMenu">
-        <nav class="mobile-nav-list" aria-label="Мобильная навигация">
-          <a href="#services">Услуги</a>
-          <a href="#advantages">Преимущества</a>
-          <a href="#steps">Как работаем</a>
-          <a href="#prices">Цены</a>
-          <a href="#reviews">Отзывы</a>
-          <a href="./faq/">Частые вопросы (FAQ)</a>
-          <a href="./contacts/">Контакты и адрес</a>
-        </nav>
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <a href="tel:+79990000000" class="btn btn-secondary" style="width: 100%;">
-            Позвонить: +7 (999) 000-00-00
-          </a>
-          <a href="#booking" class="btn btn-primary" style="width: 100%;">
-            Записаться на кодирование
-          </a>
+      <!-- Mobilus visas ekranas / išskleidžiamas meniu -->
+      <div class="mobile-drawer" id="mobile-nav-drawer" aria-hidden="true">
+        <div class="mobile-drawer-inner">
+          <nav class="mobile-nav-links" aria-label="Mobili navigacija">
+            <a href="#services" class="mobile-link" data-i18n="nav_services">Paslaugos</a>
+            <a href="#simulator" class="mobile-link" data-i18n="nav_simulator">Kodavimo simuliatorius</a>
+            <a href="#chain-check" class="mobile-link" data-i18n="nav_chain">Grandinės patikra (30€)</a>
+            <a href="#how-it-works" class="mobile-link" data-i18n="nav_steps">Kaip dirbame</a>
+            <a href="#pricing" class="mobile-link" data-i18n="nav_prices">Kainoraštis</a>
+            <a href="#reviews" class="mobile-link" data-i18n="nav_reviews">Atsiliepimai</a>
+            <a href="faq.html" class="mobile-link" data-i18n="nav_faq">D.U.K.</a>
+            <a href="contacts.html" class="mobile-link" data-i18n="nav_contacts">Kontaktai</a>
+          </nav>
+
+          <div class="mobile-drawer-footer">
+            <div class="mobile-drawer-contacts">
+              <a href="tel:+37063305031" class="btn btn-primary" style="width: 100%;">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Karolis (Diagnostika): +370 633 05031</span>
+              </a>
+              <a href="tel:+37068644262" class="btn btn-secondary" style="width: 100%;">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <span>Karolis (Remontas): +370 686 44262</span>
+              </a>
+              <a href="#booking" class="btn btn-white" style="width: 100%;" data-i18n="btn_book">
+                Registruotis vizitui
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </header>
 
-    <main>
-      <!-- 2. СЕКЦИЯ HERO -->
-      <section class="hero-section">
+    <main id="main-content">
+      <!-- 2. HERO SECTION -->
+      <section class="hero-section" id="hero">
+        <div class="hero-radial-glow" aria-hidden="true"></div>
         <div class="container hero-grid">
-          <div class="hero-content">
-            <div class="m-badge-pill">ТОЛЬКО ДЛЯ АВТОМОБИЛЕЙ BMW</div>
-            <h1 class="hero-title">
-              Кодирование и активация скрытых функций <span class="highlight">BMW</span>
+          <div class="hero-copy-column">
+            <!-- Eyebrow žyma -->
+            <div class="eyebrow-pill" data-reveal>
+              <span class="m-stripe-mini" aria-hidden="true"></span>
+              <span data-i18n="hero_eyebrow">TIK BMW AUTOMOBILIŲ SPECIALIZACIJA · KAUNAS</span>
+            </div>
+
+            <!-- Įspėjimo juostelė -->
+            <div class="warning-callout" data-reveal>
+              <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              <span data-i18n="hero_warning">REGISTRACIJA BŪTINA prieš atvykstant į servisą</span>
+            </div>
+
+            <h1 class="hero-title" data-reveal>
+              <span class="title-line" data-i18n="hero_title_1">Bimmeristai – BMW</span>
+              <span class="title-line text-accent" data-i18n="hero_title_2">diagnostika, kodavimas</span>
+              <span class="title-line" data-i18n="hero_title_3">ir remontas Kaune</span>
             </h1>
-            <p class="hero-subtitle">
-              Раскройте заводской потенциал вашего BMW без потери дилерской гарантии:
-              Fullscreen CarPlay, память Start/Stop, M-приборная панель, русификация
-              и безопасное обновление электронных блоков.
+
+            <p class="hero-desc" data-i18n="hero_desc" data-reveal>
+              Kompiuterinė variklio grandinių patikra neardant variklio, CarPlay aktyvavimas,
+              žemėlapių atnaujinimas ir profesionalus gedimų šalinimas. Tik BMW automobiliai.
             </p>
 
-            <div class="hero-actions">
-              <a href="tel:+79990000000" class="btn btn-primary btn-lg">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                <span>Позвонить</span>
+            <div class="hero-actions" data-reveal>
+              <a href="tel:+37063305031" class="btn btn-primary btn-lg">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span data-i18n="hero_cta_call">Registruotis / Skambinti</span>
               </a>
-              <a href="#booking" class="btn btn-secondary btn-lg">
-                <span>Записаться</span>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+              <a href="#services" class="btn btn-outline btn-lg" data-i18n="hero_cta_services">
+                Peržiūrėti paslaugas
               </a>
             </div>
 
-            <div class="hero-features-row">
-              <div class="hero-feature-item">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-                <span>Бэкап всех блоков перед работой</span>
+            <!-- Greiti pasitikėjimo rodikliai -->
+            <div class="hero-trust-bar" data-reveal>
+              <div class="trust-metric">
+                <span class="metric-val font-tabular text-green">30€</span>
+                <span class="metric-lbl" data-i18n="trust_metric_chain">Grandinės patikra</span>
               </div>
-              <div class="hero-feature-item">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                  <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-                <span>Дилерский ICOM Next &amp; E-Sys</span>
+              <div class="trust-sep"></div>
+              <div class="trust-metric">
+                <span class="metric-val font-tabular">100%</span>
+                <span class="metric-lbl" data-i18n="trust_metric_oem">OEM ISTA+ įranga</span>
               </div>
-              <div class="hero-feature-item">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                <span>От 30 минут в вашем присутствии</span>
+              <div class="trust-sep"></div>
+              <div class="trust-metric">
+                <span class="metric-val">Kaunas</span>
+                <span class="metric-lbl" data-i18n="trust_metric_loc">Lietuva</span>
               </div>
             </div>
           </div>
 
-          <!-- Правый блок: авторский силуэт кузова BMW с неоновыми контурами -->
-          <div class="hero-visual-card fade-in">
-            <svg class="bmw-silhouette-svg" viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Стилизованный аэродинамический силуэт BMW">
-              <!-- Градиент подсветки фары и кузова -->
-              <defs>
-                <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#38bdf8" />
-                  <stop offset="50%" stop-color="#1c69d4" />
-                  <stop offset="100%" stop-color="#00205b" />
-                </linearGradient>
-              </defs>
+          <!-- Hero vizualinė skiltis: BMW kėbulo SVG linijinė animacija + Telemetrijos HUD -->
+          <div class="hero-visual-column" data-reveal>
+            <div class="car-telemetry-card">
+              <!-- SVG Automobilio kėbulo linijinis piešinys (autentiškas originalus vektorinis kontūras) -->
+              <div class="car-canvas-wrapper">
+                <svg class="car-silhouette-svg" viewBox="0 0 540 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="BMW sportinio kupė kėbulo telemetrijos linijos">
+                  <defs>
+                    <linearGradient id="mGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#4DA3FF" />
+                      <stop offset="50%" stop-color="#1C69D4" />
+                      <stop offset="100%" stop-color="#E4002B" />
+                    </linearGradient>
+                    <filter id="laserGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="6" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
 
-              <!-- Линии кузова купе / седана BMW -->
-              <path d="M30 240 C 90 238, 130 200, 190 190 C 260 140, 340 100, 430 105 C 490 110, 520 140, 570 180 C 585 190, 590 220, 580 240" stroke="url(#neonGlow)" stroke-width="3" stroke-linecap="round" fill="none" class="pulse-path"/>
-              
-              <!-- Характерный изгиб Хофмайстера и линия крыши -->
-              <path d="M240 155 C 290 120, 360 115, 420 120 C 465 125, 485 150, 480 180 L 450 180 C 445 165, 430 150, 390 145 Z" fill="rgba(28, 105, 212, 0.15)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4"/>
-              
-              <!-- Агрессивные ангельские глазки / лазерные фары BMW Laserlight -->
-              <path d="M60 215 C 80 215, 100 220, 115 228" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-              <path d="M125 229 C 145 230, 160 235, 175 240" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+                  <!-- Fono tinklas -->
+                  <path d="M20 180 H520 M20 140 H520 M20 100 H520 M20 60 H520" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 4" />
+                  <path d="M100 20 V190 M200 20 V190 M300 20 V190 M400 20 V190 M500 20 V190" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 4" />
 
-              <!-- Двойная решётка радиатора Iconic Glow (стилизация) -->
-              <path d="M40 226 C 45 220, 55 220, 58 226 L 55 242 C 52 246, 42 246, 38 242 Z" stroke="#1c69d4" stroke-width="2" fill="rgba(28, 105, 212, 0.2)"/>
-              <path d="M22 226 C 27 220, 37 220, 40 226 L 37 242 C 34 246, 24 246, 20 242 Z" stroke="#1c69d4" stroke-width="2" fill="rgba(28, 105, 212, 0.2)"/>
+                  <!-- Pagrindinė kėbulo aerodinaminė linija (animuojama su dashoffset) -->
+                  <path class="car-path-contour" d="M35 158 C55 158 85 155 110 148 C145 138 185 118 235 78 C265 54 310 44 360 44 C410 44 435 62 458 88 C480 112 505 138 525 145 C532 147 535 152 532 158 C525 170 515 172 490 172 C485 150 465 134 440 134 C415 134 395 150 390 172 L180 172 C175 150 155 134 130 134 C105 134 85 150 80 172 L35 172 C30 172 25 168 25 160 C25 158 28 158 35 158 Z" stroke="#4DA3FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-              <!-- Колёсные арки и капот -->
-              <path d="M90 240 A 45 45 0 0 1 180 240" stroke="#1c69d4" stroke-width="3" fill="none"/>
-              <path d="M450 240 A 45 45 0 0 1 540 240" stroke="#1c69d4" stroke-width="3" fill="none"/>
-              <line x1="10" y1="240" x2="590" y2="240" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                  <!-- Šoninių langų kontūras -->
+                  <path class="car-path-detail" d="M242 84 C272 62 312 54 355 54 C395 54 415 68 432 90 C410 90 350 90 295 90 C265 90 250 87 242 84 Z" stroke="rgba(77, 163, 255, 0.65)" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="340" y1="54" x2="340" y2="90" stroke="rgba(77, 163, 255, 0.45)" stroke-width="1.5" />
 
-              <!-- Точки цифровой шины данных CAN/Ethernet -->
-              <circle cx="135" cy="240" r="4" fill="#38bdf8"/>
-              <circle cx="495" cy="240" r="4" fill="#38bdf8"/>
-              <circle cx="310" cy="180" r="3" fill="#ffffff"/>
-            </svg>
+                  <!-- Ratai ir stabdžių diskai -->
+                  <circle cx="130" cy="172" r="30" stroke="#1C69D4" stroke-width="2" />
+                  <circle cx="130" cy="172" r="16" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
+                  <circle cx="440" cy="172" r="30" stroke="#1C69D4" stroke-width="2" />
+                  <circle cx="440" cy="172" r="16" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" />
 
-            <div class="hero-live-badge">
-              <span style="color: var(--text-muted);">Протокол шины: ENET / DoIP (100 Mbit)</span>
-              <span class="hero-live-tag">● БЕЗОПАСНЫЙ ДОСТУП</span>
+                  <!-- Lazeriniai BMW žibintai (priekis) -->
+                  <path d="M495 125 C512 128 522 135 528 142" stroke="#4DA3FF" stroke-width="3" filter="url(#laserGlow)" stroke-linecap="round"/>
+                  <circle cx="518" cy="136" r="3.5" fill="#4DA3FF" filter="url(#laserGlow)"/>
+
+                  <!-- Galinis žibintas (L-forma) -->
+                  <path d="M45 142 L65 142 L55 150" stroke="#E4002B" stroke-width="3" stroke-linecap="round"/>
+
+                  <!-- Dinaminis diagnostikos skenavimo spindulys -->
+                  <line class="scanner-sweep" x1="100" y1="30" x2="100" y2="185" stroke="url(#mGrad)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                </svg>
+              </div>
+
+              <!-- HUD Rodiklių juosta -->
+              <div class="hud-telemetry-body">
+                <div class="hud-header">
+                  <div class="hud-title-wrap">
+                    <span class="live-dot" aria-hidden="true"></span>
+                    <span class="hud-label font-tabular">BMW ISTA+ LIVE // KAUNAS WORKSHOP</span>
+                  </div>
+                  <span class="hud-tag">ONLINE</span>
+                </div>
+
+                <div class="hud-grid">
+                  <div class="hud-cell">
+                    <span class="hud-sub" data-i18n="hud_ecu">OBD-II RYŠYS</span>
+                    <span class="hud-val text-accent font-tabular">ENET 100Mbit</span>
+                  </div>
+                  <div class="hud-cell">
+                    <span class="hud-sub" data-i18n="hud_voltage">BORTO ĮTAMPA</span>
+                    <span class="hud-val font-tabular">14.1 V</span>
+                  </div>
+                  <div class="hud-cell">
+                    <span class="hud-sub" data-i18n="hud_chain_price">GRANDINĖS PATIKRA</span>
+                    <span class="hud-val text-green font-tabular">30 €</span>
+                  </div>
+                </div>
+
+                <div class="hud-footer">
+                  <span class="hud-note" data-i18n="hud_note">B47, B57, B48, B58, B38 patikra neardant variklio</span>
+                  <a href="#chain-check" class="hud-link" data-i18n="hud_link">Tikrinti suderinamumą →</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 3. ПРЕИМУЩЕСТВА / ДОВЕРИЕ -->
-      <section class="section-pad" id="advantages">
+      <!-- 3. TRUST / BENEFITS SECTION -->
+      <section class="section-pad section-dark" id="trust">
         <div class="container">
-          <div class="section-head fade-in">
-            <span class="m-badge-pill">ПОЧЕМУ МЫ</span>
-            <h2 class="section-title">Инженерный подход к кодированию BMW</h2>
-            <p class="section-desc">
-              Мы не универсальный автосервис. Наша специализация — исключительно электроника,
-              блоки управления и мультимедиа автомобилей BMW с 2006 по 2026 годы.
+          <div class="section-head text-center" data-reveal>
+            <span class="eyebrow-pill" data-i18n="trust_eyebrow">PASITIKĖJIMAS IR EKSPERTIŠKUMAS</span>
+            <h2 class="section-title" data-i18n="trust_title">Kodėl BMW vairuotojai renkasi Bimmeristus?</h2>
+            <p class="section-desc" data-i18n="trust_desc">
+              Mes nesiimame kitų automobilių markių. Mūsų įranga, žinios ir patirtis skirta išskirtinai tik BMW inžinerijai.
             </p>
           </div>
 
-          <div class="trust-grid">
-            <div class="trust-card fade-in">
-              <div class="trust-icon-box">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <div class="features-grid">
+            <div class="feature-card" data-reveal>
+              <div class="feature-icon-box blue">
+                <svg class="feature-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="12 8 8 12 12 16 16 12 12 8"/>
                 </svg>
               </div>
-              <h3 class="trust-card-title">Полная безопасность</h3>
-              <p class="trust-card-text">
-                Перед любым изменением делаем полный бэкап кодировочных данных (NCD/CAFD). Все настройки можно вернуть в заводское состояние в 1 клик.
+              <h3 class="feature-title" data-i18n="feat_bmw_only_title">100% tik BMW specializacija</h3>
+              <p class="feature-text" data-i18n="feat_bmw_only_desc">
+                Dirbame tik su E, F, G ir I serijų BMW. Žinome kiekvieno kėbulo elektros grandines, valdymo blokų niuansus ir silpnąsias vietas.
               </p>
             </div>
 
-            <div class="trust-card fade-in">
-              <div class="trust-icon-box">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <div class="feature-card" data-reveal>
+              <div class="feature-icon-box">
+                <svg class="feature-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
                   <line x1="8" y1="21" x2="16" y2="21"/>
                   <line x1="12" y1="17" x2="12" y2="21"/>
                 </svg>
               </div>
-              <h3 class="trust-card-title">Дилерский софт</h3>
-              <p class="trust-card-text">
-                Работаем через оригинальные мультиплексоры ICOM Next и софт BMW Group (E-Sys Plus, ISTA+, INPA, Rheingold) без дешевых китайских ELM-адаптеров.
+              <h3 class="feature-title" data-i18n="feat_oem_title">OEM lygio įranga (ISTA+ / E-Sys)</h3>
+              <p class="feature-text" data-i18n="feat_oem_desc">
+                Originali BMW AG programinė įranga ir stabilus maitinimo palaikymas. Jokių kiniškų adapterių ar rizikos sugadinti automobilio valdymo blokus.
               </p>
             </div>
 
-            <div class="trust-card fade-in">
-              <div class="trust-icon-box">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 14 14"/>
+            <div class="feature-card" data-reveal>
+              <div class="feature-icon-box green">
+                <svg class="feature-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                 </svg>
               </div>
-              <h3 class="trust-card-title">Опыт 8+ лет</h3>
-              <p class="trust-card-text">
-                Знаем все нюансы платформ E, F, G, I-серии. Точно знаем, какие опции поддерживает именно ваша комплектация по VIN.
+              <h3 class="feature-title" data-i18n="feat_fast_title">30€ patikra be variklio ardymo</h3>
+              <p class="feature-text" data-i18n="feat_fast_desc">
+                B serijos variklių grandinės išsitampymo įvertinimas kompiuteriu laipsniais (°). Jokio bereikalingo variklio ardymo ir sutaupytos šimtinės eurų.
               </p>
             </div>
 
-            <div class="trust-card fade-in">
-              <div class="trust-icon-box">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                  <polyline points="22 4 12 14.01 9 11.01"/>
+            <div class="feature-card" data-reveal>
+              <div class="feature-icon-box red">
+                <svg class="feature-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                 </svg>
               </div>
-              <h3 class="trust-card-title">Гарантия на работу</h3>
-              <p class="trust-card-text">
-                Предоставляем гарантию на все выполненные кодировки и прошивки. Если после ТО у дилера функции сбросятся — восстановим бесплатно.
+              <h3 class="feature-title" data-i18n="feat_masters_title">Aiškus meistrų pasiskirstymas</h3>
+              <p class="feature-text" data-i18n="feat_masters_desc">
+                Diagnostika, grandinės patikra ir kodavimas – Karolis (+370 633 05031). Mechaninis remontas ir grandinių keitimas – Karolis (+370 686 44262).
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 4. УСЛУГИ (BENTO-КАРТОЧКИ) -->
-      <section class="section-pad" id="services" style="background: #0d1017;">
+      <!-- 4. SERVICES BENTO GRID -->
+      <section class="section-pad" id="services">
         <div class="container">
-          <div class="section-head fade-in">
-            <span class="m-badge-pill">НАШИ УСЛУГИ</span>
-            <h2 class="section-title">Каталог решений для вашего BMW</h2>
-            <p class="section-desc">
-              Все опции активируются на заводском уровне в соответствующих блоках управления (HU_NBT, BDC, DME, KOMBI, DSC).
+          <div class="section-head" data-reveal>
+            <span class="eyebrow-pill" data-i18n="services_eyebrow">PASLAUGŲ SPEKTRAS</span>
+            <h2 class="section-title" data-i18n="services_title">BMW diagnostikos, kodavimo ir remonto paslaugos</h2>
+            <p class="section-desc" data-i18n="services_desc">
+              Skaidrios kainos eurais, OEM lygio standartai ir garantuotas rezultatas Jūsų BMW automobiliui Kaune.
             </p>
           </div>
 
           <div class="bento-grid">
-            <!-- Bento Карточка 1 (Широкая: Активация скрытых функций) -->
-            <article class="bento-card bento-col-8 bento-card-featured fade-in">
-              <div>
-                <span class="bento-tag">ХИТ СЕЗОНА · ПОПУЛЯРНОЕ</span>
-                <h3 class="bento-title">Комплексная активация скрытых функций</h3>
-                <p class="bento-desc">
-                  BMW закладывает в автомобиль десятки удобных возможностей, отключённых для вашего региона или комплектации. Активируем пакет опций за один визит.
-                </p>
-                <ul class="bento-list">
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span><strong>Память системы Start/Stop:</strong> авто запоминает последнее состояние и не глушит мотор на каждом светофоре.</span>
-                  </li>
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span><strong>M-приборная панель &amp; спидометр 330 км/ч:</strong> стиль M-Performance, цифровой спидометр на щитке.</span>
-                  </li>
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span><strong>Видео в движении (Video in Motion):</strong> просмотр видео с USB или экрана на любой скорости.</span>
-                  </li>
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span><strong>Складывание зеркал &amp; закрытие багажника:</strong> с ключа одним нажатием без удержания.</span>
-                  </li>
-                </ul>
+            <!-- 1 kortelė: Didelė kortelė - Grandinės patikra -->
+            <article class="bento-card bento-hero-service" data-reveal>
+              <div class="card-top">
+                <span class="service-kicker text-accent">01 // SPECIALIZACIJA</span>
+                <span class="badge-tag green">TOP PASLAUGA</span>
               </div>
-              <div class="bento-footer">
-                <div>
-                  <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Стоимость пакета</span>
-                  <span class="bento-price">от 3 000 ₽</span>
+              <h3 class="card-title" data-i18n="srv_chain_title">Kompiuterinė variklio grandinės patikra</h3>
+              <p class="card-body" data-i18n="srv_chain_desc">
+                Tikslus paskirstymo veleno poslinkio kampo nustatymas laipsniais (°) per OEM ISTA+ įrangą. Neardomas nei vienas variklio varžtas. Skirta BMW B38, B48, B58, B47, B57 varikliams.
+              </p>
+              <div class="service-meta-list">
+                <div class="meta-item">
+                  <span class="meta-label" data-i18n="srv_duration">Trukmė:</span>
+                  <span class="meta-value font-tabular">~30 min.</span>
                 </div>
-                <a href="#booking" class="btn btn-primary btn-sm">Записаться на пакет</a>
+                <div class="meta-item">
+                  <span class="meta-label" data-i18n="srv_method">Metodas:</span>
+                  <span class="meta-value" data-i18n="srv_method_val">Neardant variklio</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label" data-i18n="srv_specialist">Meistras:</span>
+                  <span class="meta-value">Karolis (+37063305031)</span>
+                </div>
+              </div>
+              <div class="card-bottom">
+                <div class="price-lockup">
+                  <span class="price-val text-green font-tabular">30 €</span>
+                  <span class="price-sub" data-i18n="price_fixed">Fiksuota kaina</span>
+                </div>
+                <a href="#chain-check" class="btn btn-outline" data-i18n="btn_check_engine">
+                  Tikrinti savo variklį
+                </a>
               </div>
             </article>
 
-            <!-- Bento Карточка 2: Apple CarPlay & Android Auto -->
-            <article class="bento-card bento-col-4 fade-in">
-              <div>
-                <span class="bento-tag">МУЛЬТИМЕДИА</span>
-                <h3 class="bento-title">Apple CarPlay на весь экран</h3>
-                <p class="bento-desc">
-                  Полноэкранный (Fullscreen) беспроводной CarPlay для головных устройств NBT EVO ID5 / ID6 и MGU. Навигация Яндекс/Google и музыка без задержек.
-                </p>
-                <ul class="bento-list">
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span>Официальный FSC-сертификат</span>
-                  </li>
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span>Без разборки салона</span>
-                  </li>
-                </ul>
+            <!-- 2 kortelė: BMW Kodavimas & CarPlay -->
+            <article class="bento-card" data-reveal>
+              <div class="card-top">
+                <span class="service-kicker text-accent">02 // KODAVIMAS</span>
+                <span class="badge-tag">KOMFORTAS</span>
               </div>
-              <div class="bento-footer">
-                <span class="bento-price">от 5 000 ₽</span>
-                <a href="#booking" class="bento-link">Заказать →</a>
+              <h3 class="card-title" data-i18n="srv_coding_title">BMW Kodavimas &amp; Apple CarPlay</h3>
+              <p class="card-body" data-i18n="srv_coding_desc">
+                Apple CarPlay Fullscreen aktyvavimas, Video in Motion, Start/Stop atmintis (TC_MSA_MEMORY), veidrodėlių užlenkimas, M-Performance ir Alpina skydelių grafika, Sport+ režimai.
+              </p>
+              <div class="card-bottom">
+                <div class="price-lockup">
+                  <span class="price-val font-tabular" data-i18n="price_from_30">Nuo 30 €</span>
+                </div>
+                <a href="#simulator" class="btn btn-outline btn-sm" data-i18n="btn_try_simulator">
+                  Išbandyti simuliatorių
+                </a>
               </div>
             </article>
 
-            <!-- Bento Карточка 3: Русификация и навигация -->
-            <article class="bento-card bento-col-4 fade-in">
-              <div>
-                <span class="bento-tag">АВТО ИЗ США / КОРЕИ</span>
-                <h3 class="bento-title">Русификация &amp; Карты 2026</h3>
-                <p class="bento-desc">
-                  Полный перевод мультимедиа и приборной панели на русский язык для авто из США, Кореи, Европы и ОАЭ. Чётные радиочастоты, фаренгейты в цельсии, литры.
-                </p>
-                <ul class="bento-list">
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span>Карты России и Европы 2026</span>
-                  </li>
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span>Голосовое управление на русском</span>
-                  </li>
-                </ul>
+            <!-- 3 kortelė: Elektronikos diagnostika -->
+            <article class="bento-card" data-reveal>
+              <div class="card-top">
+                <span class="service-kicker text-accent">03 // DIAGNOSTIKA</span>
+                <span class="badge-tag">ISTA+</span>
               </div>
-              <div class="bento-footer">
-                <span class="bento-price">от 6 000 ₽</span>
-                <a href="#booking" class="bento-link">Заказать →</a>
+              <h3 class="card-title" data-i18n="srv_diag_title">Elektronikos &amp; Gedimų diagnostika</h3>
+              <p class="card-body" data-i18n="srv_diag_desc">
+                Pilnas valdymo blokų klaidų skaitymas, gyvų parametrų analizė realiuoju laiku (DPF būklė, purkštukų korekcijos, turbinos slėgis, oro srautas, kuro siurblys).
+              </p>
+              <div class="card-bottom">
+                <div class="price-lockup">
+                  <span class="price-val font-tabular">30 €</span>
+                </div>
+                <a href="tel:+37063305031" class="btn btn-outline btn-sm" data-i18n="btn_call_karolis">
+                  Skambinti Karoliui
+                </a>
               </div>
             </article>
 
-            <!-- Bento Карточка 4: Проверка цепи B-серии & Диагностика -->
-            <article class="bento-card bento-col-4 fade-in">
-              <div>
-                <span class="bento-tag">B-СЕРИЯ ДВИГАТЕЛЕЙ</span>
-                <h3 class="bento-title">Компьютерная проверка цепи ГРМ</h3>
-                <p class="bento-desc">
-                  Проверка растяжения цепи для моторов B38, B48, B58, B47 без разборки двигателя. Точный замер фазового угла распределительного вала в градусах через ISTA+.
-                </p>
-                <ul class="bento-list">
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span>100% без снятия клапанной крышки</span>
-                  </li>
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span>Тест VANOS и баланса форсунок</span>
-                  </li>
-                </ul>
+            <!-- 4 kortelė: Mechaninis remontas -->
+            <article class="bento-card" data-reveal>
+              <div class="card-top">
+                <span class="service-kicker text-red">04 // MECHATRONIKA</span>
+                <span class="badge-tag red">REMONTAS</span>
               </div>
-              <div class="bento-footer">
-                <span class="bento-price">3 000 ₽</span>
-                <a href="#booking" class="bento-link">Заказать →</a>
+              <h3 class="card-title" data-i18n="srv_repair_title">Grandinių keitimas &amp; Remontas</h3>
+              <p class="card-body" data-i18n="srv_repair_desc">
+                Profesionalus variklio grandinių komplektų keitimas (B ir N serijos), alyvos nuotėkių šalinimas, pakabos, stabdžių bei agregatų remontas su originaliomis OEM dalimis.
+              </p>
+              <div class="card-bottom">
+                <div class="price-lockup">
+                  <span class="price-val font-tabular" data-i18n="price_estimate">Pagal sąmatą</span>
+                </div>
+                <a href="tel:+37068644262" class="btn btn-danger btn-sm">
+                  Karolis: +37068644262
+                </a>
               </div>
             </article>
 
-            <!-- Bento Карточка 5: Чип-тюнинг, xDelete, АКПП xHP -->
-            <article class="bento-card bento-col-4 fade-in">
-              <div>
-                <span class="bento-tag">DRIVE &amp; PERFORMANCE</span>
-                <h3 class="bento-title">Прошивка АКПП xHP &amp; xDelete</h3>
-                <p class="bento-desc">
-                  Оптимизация работы 8-ступенчатых коробок ZF 8HP: быстрые переключения, лаунч-контроль, индикация передачи в D-режиме, программное отключение переднего привода xDrive.
-                </p>
-                <ul class="bento-list">
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span>Stage 1 / 2 / 3 для ZF 8HP</span>
-                  </li>
-                  <li>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                    <span>Лицензионное ПО</span>
-                  </li>
-                </ul>
+            <!-- 5 kortelė: Europos žemėlapiai -->
+            <article class="bento-card" data-reveal>
+              <div class="card-top">
+                <span class="service-kicker text-accent">05 // NAVIGACIJA</span>
+                <span class="badge-tag">2026 ŽEMĖLAPIAI</span>
               </div>
-              <div class="bento-footer">
-                <span class="bento-price">от 8 000 ₽</span>
-                <a href="#booking" class="bento-link">Заказать →</a>
+              <h3 class="card-title" data-i18n="srv_maps_title">Europos žemėlapių FSC atnaujinimas</h3>
+              <p class="card-body" data-i18n="srv_maps_desc">
+                Naujausių Road Map Europe (EVO, NEXT, LIVE, ROUTE, PREMIUM) žemėlapių įrašymas su legaliu FSC kodu. Nauji Kauno ir Lietuvos keliai, greičio radarai.
+              </p>
+              <div class="card-bottom">
+                <div class="price-lockup">
+                  <span class="price-val font-tabular" data-i18n="price_from_30">Nuo 30 €</span>
+                </div>
+                <a href="#booking" class="btn btn-outline btn-sm" data-i18n="btn_order">
+                  Užsakyti
+                </a>
+              </div>
+            </article>
+
+            <!-- 6 kortelė: Retrofit -->
+            <article class="bento-card" data-reveal>
+              <div class="card-top">
+                <span class="service-kicker text-accent">06 // RETROFIT</span>
+                <span class="badge-tag">MONTAVIMAS</span>
+              </div>
+              <h3 class="card-title" data-i18n="srv_retrofit_title">Papildomos įrangos montavimas</h3>
+              <p class="card-body" data-i18n="srv_retrofit_desc">
+                Galinio vaizdo kamerų, NBT / ID6 multimedijos ekranų, M vairų su bėgių mentelėmis pajungimas ir teisingas suprogramavimas į automobilio VO / FA konfigūraciją.
+              </p>
+              <div class="card-bottom">
+                <div class="price-lockup">
+                  <span class="price-val font-tabular" data-i18n="price_individual">Individualiai</span>
+                </div>
+                <a href="#booking" class="btn btn-outline btn-sm" data-i18n="btn_inquire">
+                  Pasiteirauti
+                </a>
               </div>
             </article>
           </div>
+        </div>
+      </section>
 
-          <!-- Призыв к действию после услуг -->
-          <div style="margin-top: 40px; padding: 24px 32px; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;" class="fade-in">
-            <div>
-              <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin: 0 0 4px 0; color: #ffffff;">Не нашли нужную опцию в списке?</h4>
-              <p style="margin: 0; color: var(--text-muted); font-size: 0.9375rem;">Мы кодируем любые индивидуальные параметры. Напишите нам свой VIN, и мы пришлём полный список для вашего кузова.</p>
+      <!-- 4.1. INTERAKTYVUS BMW KODAVIMO SIMULIATORIUS -->
+      <section class="section-pad section-dark" id="simulator">
+        <div class="container">
+          <div class="section-head text-center" data-reveal>
+            <span class="eyebrow-pill" data-i18n="sim_eyebrow">INTERAKTYVUS MODULIS</span>
+            <h2 class="section-title" data-i18n="sim_title">BMW funkcijų kodavimo terminalas</h2>
+            <p class="section-desc" data-i18n="sim_desc">
+              Pasirinkite automobilio modelį ir norimą opciją: pamatysite, kaip vyksta saugus kodavimo procesas be rizikos blokams.
+            </p>
+          </div>
+
+          <div class="terminal-shell" data-reveal>
+            <!-- Lango antraštė su indikatoriais -->
+            <div class="terminal-header-bar">
+              <div class="traffic-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-session-title font-tabular">BIMMERISTAI_ENET_DIAG // KAUNAS</span>
+              </div>
+              <div class="terminal-conn-status">
+                <span class="live-beacon"></span>
+                <span class="font-tabular">OBD-II ENET 100 Mbps OK</span>
+              </div>
             </div>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-              <a href="tel:+79990000000" class="btn btn-secondary">Позвонить</a>
-              <a href="#booking" class="btn btn-primary">Узнать по VIN</a>
+
+            <div class="terminal-split-view">
+              <!-- Kairė: Automobilio ir opcijų pasirinkimas -->
+              <div class="terminal-controls-col">
+                <div class="controls-label" data-i18n="sim_step1">1. Pasirinkite BMW modelį:</div>
+                <div class="car-chips-row">
+                  <button type="button" class="chip-btn active" data-car-chip="BMW 3 Serija (F30 / G20)">3 Serija (F30/G20)</button>
+                  <button type="button" class="chip-btn" data-car-chip="BMW 5 Serija (F10 / G30)">5 Serija (F10/G30)</button>
+                  <button type="button" class="chip-btn" data-car-chip="BMW X5 / X6 (F15 / G05)">X5 / X6 (F15/G05)</button>
+                  <button type="button" class="chip-btn" data-car-chip="BMW 4 / 2 Serija Coupe">4 / 2 Serija Coupe</button>
+                  <button type="button" class="chip-btn" data-car-chip="BMW M-Power / M-Sport">M-Performance</button>
+                </div>
+
+                <div class="controls-label" style="margin-top: 18px;" data-i18n="sim_step2">2. Pasirinkite funkciją:</div>
+                <div class="preset-buttons-grid">
+                  <button type="button" class="preset-card active" data-coding-preset="carplay">
+                    <span class="preset-card-head">
+                      <span>Apple CarPlay</span>
+                      <span class="preset-pill">FULLSCREEN</span>
+                    </span>
+                    <span class="preset-card-sub" data-i18n="sim_opt_carplay">Pilno ekrano vaizdas NBT EVO ID5/ID6 ir MGU.</span>
+                  </button>
+
+                  <button type="button" class="preset-card" data-coding-preset="startstop">
+                    <span class="preset-card-head">
+                      <span>Start/Stop Atmintis</span>
+                      <span class="preset-pill">DME / BDC</span>
+                    </span>
+                    <span class="preset-card-sub" data-i18n="sim_opt_startstop">Prisimena išjungtą būseną, aktyvuojamas Sport+.</span>
+                  </button>
+
+                  <button type="button" class="preset-card" data-coding-preset="cluster">
+                    <span class="preset-card-head">
+                      <span>M-Performance Skydelis</span>
+                      <span class="preset-pill">KOMBI</span>
+                    </span>
+                    <span class="preset-card-sub" data-i18n="sim_opt_cluster">M logotipas, 330 km/h skalė ir skaitmeninis greitis.</span>
+                  </button>
+
+                  <button type="button" class="preset-card" data-coding-preset="maps">
+                    <span class="preset-card-head">
+                      <span>2026 Žemėlapiai</span>
+                      <span class="preset-pill">FSC KODAS</span>
+                    </span>
+                    <span class="preset-card-sub" data-i18n="sim_opt_maps">Naujausi Europos ir Kauno kelių žemėlapiai.</span>
+                  </button>
+
+                  <button type="button" class="preset-card" data-coding-preset="exhaust" style="grid-column: 1 / -1;">
+                    <span class="preset-card-head">
+                      <span>Išmetimo sklendės &amp; ASD Off</span>
+                      <span class="preset-pill">DME SPORT</span>
+                    </span>
+                    <span class="preset-card-sub" data-i18n="sim_opt_exhaust">Išjungia dirbtinį garsiakalbių garsą, atidaro sklendes.</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Dešinė: Konsolės tiesioginis žurnalas -->
+              <div class="terminal-log-col">
+                <div class="log-panel-head">
+                  <span class="log-title font-tabular">
+                    LOGS // <span id="coding-selected-car" class="text-accent">BMW 3 Serija (F30 / G20)</span>
+                  </span>
+                  <span class="badge-tag green" id="coding-gauge-result">FULLSCREEN AKTYVUOTA</span>
+                </div>
+
+                <div class="console-box" id="coding-console-stream" role="log" aria-live="polite">
+                  <!-- Užpildoma per script.js -->
+                </div>
+
+                <div class="console-gauges-row">
+                  <div class="gauge-card">
+                    <span class="gauge-lbl" data-i18n="sim_gauge_ecu">VALDYMO BLOKAS</span>
+                    <span class="gauge-val font-tabular text-accent" id="coding-gauge-ecu">HU_NBT_EVO</span>
+                  </div>
+                  <div class="gauge-card">
+                    <span class="gauge-lbl" data-i18n="sim_gauge_volt">BORTO ĮTAMPA</span>
+                    <span class="gauge-val font-tabular text-green" id="coding-gauge-volt">13.8V</span>
+                  </div>
+                  <div class="gauge-card">
+                    <span class="gauge-lbl" data-i18n="sim_gauge_price">KAINA KAUNE</span>
+                    <span class="gauge-val font-tabular">30 €</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 5. КАК ПРОХОДИТ РАБОТА (4 ШАГА) -->
-      <section class="section-pad" id="steps">
+      <!-- 4.2. INTERAKTYVUS GRANDINĖS TIKRINIMO MODULIS -->
+      <section class="section-pad" id="chain-check">
         <div class="container">
-          <div class="section-head fade-in">
-            <span class="m-badge-pill">ПРОЗРАЧНЫЙ ПРОЦЕСС</span>
-            <h2 class="section-title">Как проходит кодирование</h2>
-            <p class="section-desc">
-              Никаких скрытых манипуляций. Вся работа выполняется открыто прямо в вашем присутствии.
+          <div class="section-head" data-reveal>
+            <span class="eyebrow-pill" data-i18n="chain_eyebrow">PATIKRA NEARDANT VARIKLIO</span>
+            <h2 class="section-title" data-i18n="chain_title">Ar Jūsų BMW variklio grandinę galima patikrinti kompiuteriu?</h2>
+            <p class="section-desc" data-i18n="chain_desc">
+              Pasirinkite variklį ir ridą – sužinokite diagnostikos metodą, kainą ir meistro rekomendaciją.
+            </p>
+          </div>
+
+          <div class="checker-card-shell" data-reveal>
+            <div class="checker-inputs-col">
+              <label class="form-label" for="checker-engine" data-i18n="chain_lbl_engine">Pasirinkite BMW variklį:</label>
+              <select class="form-select" id="checker-engine">
+                <option value="B47" selected>B47 (2.0d Dyzelinas) – F ir G serijos (118d, 320d, 520d, X3)</option>
+                <option value="B57">B57 (3.0d Dyzelinas) – 330d, 530d, 540d, X5 30d/40d, X7</option>
+                <option value="B48">B48 (2.0i Benzinas) – 220i, 320i, 330i, 530i, X1, X3</option>
+                <option value="B58">B58 (3.0i Benzinas) – M140i, 340i, M340i, 540i, X3 M40i</option>
+                <option value="B38">B38 (1.5i Benzinas) – 118i, 218i, X1 sDrive18i</option>
+                <option value="N_SERIES">N47 / N57 / N20 (N serijos ankstesni modeliai)</option>
+              </select>
+
+              <label class="form-label" for="checker-mileage" style="margin-top: 18px;" data-i18n="chain_lbl_mileage">Pasirinkite dabartinę ridą:</label>
+              <select class="form-select" id="checker-mileage">
+                <option value="under120">Iki 120 000 km (Profilaktika / Tikrinimas prieš pirkimą)</option>
+                <option value="120to180" selected>120 000 – 180 000 km (Optimalus patikros laikas)</option>
+                <option value="180to240">180 000 – 240 000 km (Padidinta išsitampymo rizika)</option>
+                <option value="over240">Virš 240 000 km (Kritinis nusidėvėjimo intervalas)</option>
+              </select>
+
+              <div class="checker-actions-stack">
+                <a href="#booking" class="btn btn-primary" style="justify-content: center;" data-i18n="btn_book_chain">
+                  Užsiregistruoti patikrai už 30€
+                </a>
+                <a href="tel:+37063305031" class="btn btn-outline" style="justify-content: center;">
+                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span>Karolis: +370 633 05031</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Rezultatų kortelė -->
+            <div class="checker-result-box">
+              <div class="result-box-header">
+                <div>
+                  <span class="result-sub" data-i18n="chain_res_head">DIAGNOSTIKOS PROTOKOLAS</span>
+                  <div class="result-engine-code text-accent" id="checker-result-title">B47 (2.0d Dyzelinas)</div>
+                </div>
+                <div class="result-price-tag">
+                  <span class="result-sub" data-i18n="chain_res_price_lbl">KAINA KAUNE</span>
+                  <div class="result-price-num text-green font-tabular" id="checker-result-price">30 €</div>
+                </div>
+              </div>
+
+              <div class="result-meta-line">
+                <span class="meta-title" data-i18n="chain_res_models">Taikoma modeliams:</span>
+                <span class="meta-text" id="checker-result-models">118d, 120d, 220d, 318d, 320d, 420d, 518d, 520d, X1, X3, X4</span>
+              </div>
+
+              <div class="result-meta-line">
+                <span class="meta-title" data-i18n="chain_res_method">Patikros metodas:</span>
+                <span class="meta-text" id="checker-result-method">
+                  Kompiuteris per OEM ISTA+ įrangą tiksliai išmatuoja paskirstymo veleno fazės poslinkio kampą laipsniais (°) neardant nei vienos variklio detalės.
+                </span>
+              </div>
+
+              <div class="result-meta-line">
+                <span class="meta-title" data-i18n="chain_res_advice">Patarimas pagal ridą:</span>
+                <span class="meta-text text-accent" id="checker-result-advice">
+                  Optimalus laikas atlikti kompiuterinę grandinės patikrą (30€) ir įvertinti laipsninį nuokrypį.
+                </span>
+              </div>
+
+              <div class="result-footer-expert">
+                <span class="meta-title" data-i18n="chain_res_specialist">Atsakingas meistras:</span>
+                <span class="expert-name font-tabular" id="checker-result-specialist">Karolis | Diagnostika ir kodavimas (+37063305031)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. HOW IT WORKS (DARBO EIGA) -->
+      <section class="section-pad section-dark" id="how-it-works">
+        <div class="container">
+          <div class="section-head text-center" data-reveal>
+            <span class="eyebrow-pill" data-i18n="steps_eyebrow">DARBO EIGA</span>
+            <h2 class="section-title" data-i18n="steps_title">Kaip vyksta registracija ir aptarnavimas?</h2>
+            <p class="section-desc" data-i18n="steps_desc">
+              Aiškus, greitas ir profesionalus procesas nuo pirmo skambučio iki atiduodamo BMW rakto.
             </p>
           </div>
 
           <div class="steps-grid">
-            <div class="step-card fade-in">
-              <div class="step-number">01</div>
-              <h3 class="step-title">Подключение и опрос</h3>
-              <p class="step-text">
-                Подключаем стабилизированный блок питания 14V и сканер ICOM Next к разъёму OBD-II. Проверяем авто на текущие ошибки.
+            <div class="step-card" data-reveal>
+              <div class="step-number font-tabular">01</div>
+              <h3 class="step-title" data-i18n="step1_title">Išankstinė registracija</h3>
+              <p class="step-text" data-i18n="step1_desc">
+                Paskambinate arba užpildote formą internetu. Suderiname patogų laiką. Primename: atvykimas galimas TIK su registracija.
               </p>
             </div>
 
-            <div class="step-card fade-in">
-              <div class="step-number">02</div>
-              <h3 class="step-title">Резервное копирование</h3>
-              <p class="step-text">
-                Сохраняем заводские дампы каждого блока управления (FA/CAFD) на диск. Это 100% страховка безопасности вашего авто.
+            <div class="step-card" data-reveal>
+              <div class="step-number font-tabular">02</div>
+              <h3 class="step-title" data-i18n="step2_title">OEM Diagnostinis pajungimas</h3>
+              <p class="step-text" data-i18n="step2_desc">
+                Prijungiame profesionalią ENET / ICOM įrangą su stabiliu akumuliatoriaus maitinimo palaikymu. Nuskaitomi valdymo blokai.
               </p>
             </div>
 
-            <div class="step-card fade-in">
-              <div class="step-number">03</div>
-              <h3 class="step-title">Кодирование параметров</h3>
-              <p class="step-text">
-                Через софт E-Sys меняем необходимые конфигурации или прошиваем сертификаты FSC (CarPlay, навигация).
+            <div class="step-card" data-reveal>
+              <div class="step-number font-tabular">03</div>
+              <h3 class="step-title" data-i18n="step3_title">Patikra arba kodavimas</h3>
+              <p class="step-text" data-i18n="step3_desc">
+                Atliekamas grandinės laipsnio testas (30€), CarPlay aktyvavimas, FSC žemėlapiai arba pašalinamos elektronikos klaidos.
               </p>
             </div>
 
-            <div class="step-card fade-in">
-              <div class="step-number">04</div>
-              <h3 class="step-title">Тест и сдача работы</h3>
-              <p class="step-text">
-                Перезагружаем блоки, вместе проверяем работу каждой опции и очищаем память от временных сервисных кодов.
+            <div class="step-card" data-reveal>
+              <div class="step-number font-tabular">04</div>
+              <h3 class="step-title" data-i18n="step4_title">Ataskaita ir rekomendacija</h3>
+              <p class="step-text" data-i18n="step4_desc">
+                Pateikiame aiškią patikros ataskaitą. Jei grandinė viršija leistiną normą, suplanuojame savalaikį keitimą pas meistrą Karolį.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 6. ЦЕНЫ «ОТ» -->
-      <section class="section-pad" id="prices" style="background: #0d1017;">
+      <!-- 6. PRICES IN EUR TABLE -->
+      <section class="section-pad" id="pricing">
         <div class="container">
-          <div class="section-head fade-in">
-            <span class="m-badge-pill">ПРАЙС-ЛИСТ</span>
-            <h2 class="section-title">Прозрачные фиксированные цены</h2>
-            <p class="section-desc">
-              Стоимость согласовывается до начала работы и не меняется в процессе.
+          <div class="section-head" data-reveal>
+            <span class="eyebrow-pill" data-i18n="price_eyebrow">SKAIDRUS KAINORAŠTIS</span>
+            <h2 class="section-title" data-i18n="price_title">Darbų kainos Kaune (EUR)</h2>
+            <p class="section-desc" data-i18n="price_desc">
+              Jokių paslėptų mokesčių ar netikėtų priemokų. Mokate tik už realiai atliktą darbą ir profesionalų rezultatą.
             </p>
           </div>
 
-          <div class="pricing-table-card fade-in">
+          <div class="pricing-table-shell" data-reveal>
             <div class="pricing-row">
-              <div>
-                <span class="pricing-title">Компьютерная диагностика всех блоков (ISTA+)</span>
-                <span class="pricing-sub">Опрос всех ECU, чтение истории ошибок, замер параметров наддува и смеси</span>
+              <div class="price-item-info">
+                <span class="price-item-name" data-i18n="pr_chain_name">Kompiuterinė variklio grandinės patikra (neardant variklio)</span>
+                <span class="price-item-sub" data-i18n="pr_chain_sub">B47, B57, B48, B58, B38 varikliams. Paskirstymo veleno kampo nustatymas laipsniais.</span>
               </div>
-              <span class="pricing-val">1 500 ₽</span>
+              <div class="price-item-cost">
+                <span class="cost-val text-green font-tabular">30 €</span>
+                <span class="cost-note" data-i18n="pr_fixed">Fiksuota kaina</span>
+              </div>
             </div>
 
             <div class="pricing-row">
-              <div>
-                <span class="pricing-title">Компьютерная проверка цепи ГРМ моторов B-серии (B38, B48, B58, B47)</span>
-                <span class="pricing-sub">Без разборки мотора, тест смещения распредвалов в градусах</span>
+              <div class="price-item-info">
+                <span class="price-item-name" data-i18n="pr_diag_name">Pilna elektronikos ir klaidų diagnostika (ISTA+)</span>
+                <span class="price-item-sub" data-i18n="pr_diag_sub">Visų valdymo blokų nuskaitymas, DPF būklė, purkštukų korekcijos, slėgiai realiu laiku.</span>
               </div>
-              <span class="pricing-val">3 000 ₽</span>
+              <div class="price-item-cost">
+                <span class="cost-val font-tabular">30 €</span>
+                <span class="cost-note" data-i18n="pr_fixed">Fiksuota kaina</span>
+              </div>
             </div>
 
             <div class="pricing-row">
-              <div>
-                <span class="pricing-title">Активация скрытых функций (пакет «Всё включено»)</span>
-                <span class="pricing-sub">Память Start/Stop, закрытие зеркал, накат, спорт-режимы, видео в движении, звуки Rolls-Royce/BMW M</span>
+              <div class="price-item-info">
+                <span class="price-item-name" data-i18n="pr_coding_name">Paslėptų funkcijų kodavimas (E-Sys / FSC)</span>
+                <span class="price-item-sub" data-i18n="pr_coding_sub">Start/Stop atmintis, veidrodėliai, M-Performance skydelis, Sport+, garso signalai ir kt.</span>
               </div>
-              <span class="pricing-val">от 3 500 ₽</span>
+              <div class="price-item-cost">
+                <span class="cost-val font-tabular" data-i18n="pr_from_30">Nuo 30 €</span>
+                <span class="cost-note" data-i18n="pr_depends">Pagal funkcijų kiekį</span>
+              </div>
             </div>
 
             <div class="pricing-row">
-              <div>
-                <span class="pricing-title">Активация Apple CarPlay Fullscreen (NBT EVO / MGU)</span>
-                <span class="pricing-sub">Широкоформатный беспроводной CarPlay, антенный кабель (при необходимости)</span>
+              <div class="price-item-info">
+                <span class="price-item-name" data-i18n="pr_carplay_name">Apple CarPlay Fullscreen aktyvavimas</span>
+                <span class="price-item-sub" data-i18n="pr_carplay_sub">NBT EVO ID5 / ID6 ir MGU sistemose. Pilnas sertifikatų įrašymas per visą ekraną.</span>
               </div>
-              <span class="pricing-val">от 5 000 ₽</span>
+              <div class="price-item-cost">
+                <span class="cost-val font-tabular" data-i18n="pr_from_50">Nuo 50 €</span>
+                <span class="cost-note" data-i18n="pr_idrive">Priklauso nuo iDrive versijos</span>
+              </div>
             </div>
 
             <div class="pricing-row">
-              <div>
-                <span class="pricing-title">Русификация головного устройства и щитка (USA / Korea / UAE)</span>
-                <span class="pricing-sub">Перевод меню, четные радиоволны, смена региона на европейский, метрика</span>
+              <div class="price-item-info">
+                <span class="price-item-name" data-i18n="pr_maps_name">Europos navigacijos žemėlapių atnaujinimas</span>
+                <span class="price-item-sub" data-i18n="pr_maps_sub">Naujausi Road Map Europe 2026 žemėlapiai su legaliu FSC kodu.</span>
               </div>
-              <span class="pricing-val">от 6 000 ₽</span>
+              <div class="price-item-cost">
+                <span class="cost-val font-tabular" data-i18n="pr_from_30">Nuo 30 €</span>
+                <span class="cost-note" data-i18n="pr_map_type">Priklauso nuo sistemos tipo</span>
+              </div>
             </div>
 
-            <div class="pricing-row">
-              <div>
-                <span class="pricing-title">Обновление карт навигации Road Map 2026 (EVO / NEXT / LIVE)</span>
-                <span class="pricing-sub">Официальные пожизненные коды активации FSC</span>
+            <div class="pricing-row highlight-repair">
+              <div class="price-item-info">
+                <span class="price-item-name" data-i18n="pr_repair_name">Mechaninis grandinių keitimas ir variklių remontas</span>
+                <span class="price-item-sub" data-i18n="pr_repair_sub">Meistras Karolis (+370 686 44262). Originalūs dalių komplektai, sąžiningas darbas ir garantija.</span>
               </div>
-              <span class="pricing-val">3 000 ₽</span>
+              <div class="price-item-cost">
+                <span class="cost-val text-red font-tabular" data-i18n="pr_estimate">Pagal sąmatą</span>
+                <span class="cost-note" data-i18n="pr_repair_phone">Skambinti: +37068644262</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 7. ОТЗЫВЫ КЛИЕНТОВ -->
-      <section class="section-pad" id="reviews">
+      <!-- 7. REVIEWS (REALIŲ KLIENTŲ ATSILIEPIMAI) -->
+      <section class="section-pad section-dark" id="reviews">
         <div class="container">
-          <div class="section-head fade-in">
-            <span class="m-badge-pill">РЕПУТАЦИЯ</span>
-            <h2 class="section-title">Что говорят владельцы BMW</h2>
-            <p class="section-desc">
-              Более 800 закодированных автомобилей серий E, F, G. Реальные отзывы наших клиентов.
+          <div class="section-head text-center" data-reveal>
+            <span class="eyebrow-pill" data-i18n="reviews_eyebrow">KLIENTŲ ATSILIEPIMAI</span>
+            <h2 class="section-title" data-i18n="reviews_title">Ką apie mus sako BMW savininkai?</h2>
+            <p class="section-desc" data-i18n="reviews_desc">
+              Realūs atsiliepimai iš Kauno ir visos Lietuvos BMW vairuotojų.
             </p>
           </div>
 
           <div class="reviews-grid">
-            <div class="review-card fade-in">
-              <div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">
-                  «Делал Fullscreen CarPlay и память Start/Stop на G30 530d. Сделали за 40 минут. Понравилось, что ребята используют дилерский стабилизатор питания, а не просто шнурок в прикуриватель. Всё чётко!»
-                </p>
+            <div class="review-box" data-reveal>
+              <div class="review-stars-row" aria-label="5 žvaigždutės">
+                ★★★★★
               </div>
-              <div class="review-author">
-                <div class="review-avatar">АВ</div>
+              <p class="review-quote" data-i18n="rev_1_text">
+                „Prieš perkant BMW 530d G30 atvažiavau grandinės patikrai. Per pusvalandį Karolis kompiuteriu tiksliai parodė paskirstymo veleno poslinkį – viskas normos ribose. Sutaupiau krūvą pinigų ir rami galva!“
+              </p>
+              <div class="review-author-meta">
+                <div class="author-avatar font-tabular">TK</div>
                 <div>
-                  <div class="review-name">Александр Васильев</div>
-                  <div class="review-model">BMW 530d xDrive (G30)</div>
+                  <div class="author-name">Tomas K.</div>
+                  <div class="author-vehicle font-tabular text-accent">BMW 530d G30</div>
                 </div>
               </div>
             </div>
 
-            <div class="review-card fade-in">
-              <div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">
-                  «Пригнал 330i из Америки на B48 моторе. Полностью русифицировали NBT EVO, сделали европейские радиочастоты и проверили цепь ГРМ. Угол показал 0.4 градуса — мотор в идеале. Спасибо за профессионализм!»
-                </p>
+            <div class="review-box" data-reveal>
+              <div class="review-stars-row" aria-label="5 žvaigždutės">
+                ★★★★★
               </div>
-              <div class="review-author">
-                <div class="review-avatar">МК</div>
+              <p class="review-quote" data-i18n="rev_2_text">
+                „Aktyvavo Fullscreen CarPlay mano F30 su NBT EVO. Dar papildomai išjungė Start/Stop kankynę ir įjungė M-Performance animaciją skydelyje. Viskas atlikta greitai, kokybiškai ir aiškiai paaiškinta.“
+              </p>
+              <div class="review-author-meta">
+                <div class="author-avatar font-tabular">LM</div>
                 <div>
-                  <div class="review-name">Максим Ковалёв</div>
-                  <div class="review-model">BMW 330i LCI (F30)</div>
+                  <div class="author-name">Lukas M.</div>
+                  <div class="author-vehicle font-tabular text-accent">BMW 328i F30</div>
                 </div>
               </div>
             </div>
 
-            <div class="review-card fade-in">
-              <div>
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">
-                  «Прошили коробку xHP Stage 2 на X5 G05 и закодировали спортивный щиток приборов. Машину как подменили — ушли затупы при старте, переключения стали как на спорткаре. Однозначно рекомендую!»
-                </p>
+            <div class="review-box" data-reveal>
+              <div class="review-stars-row" aria-label="5 žvaigždutės">
+                ★★★★★
               </div>
-              <div class="review-author">
-                <div class="review-avatar">ДП</div>
+              <p class="review-quote" data-i18n="rev_3_text">
+                „Keičiau grandinių komplektą pas mechaniką Karolį po to, kai diagnostika parodė ribinį išsitampymą. Darbai atlikti idealiai, surinkta švariai, pateiktos visos senos detalės. Rekomenduoju visiems bimmeristams Kaune.“
+              </p>
+              <div class="review-author-meta">
+                <div class="author-avatar font-tabular">DP</div>
                 <div>
-                  <div class="review-name">Дмитрий Попов</div>
-                  <div class="review-model">BMW X5 40i (G05)</div>
+                  <div class="author-name">Dainius P.</div>
+                  <div class="author-vehicle font-tabular text-accent">BMW X5 F15 30d</div>
                 </div>
               </div>
             </div>
@@ -602,263 +920,398 @@
         </div>
       </section>
 
-      <!-- 8. ФОРМА ЗАПИСИ (ГЛАВНАЯ СЕКЦИЯ КОНВЕРСИИ) -->
-      <section class="section-pad booking-section" id="booking">
+      <!-- 8. BOOKING FORM & SPECIALISTS (PAGRINDINIS KONVERSIJOS BLOKAS) -->
+      <section class="section-pad" id="booking">
         <div class="container">
-          <div class="booking-grid">
-            <div class="booking-info fade-in">
+          <div class="section-head text-center" data-reveal>
+            <span class="eyebrow-pill" data-i18n="book_eyebrow">REGISTRACIJA VIZITUI</span>
+            <h2 class="section-title" data-i18n="book_title">Užsiregistruokite patikrai ar remontui Kaune</h2>
+            <p class="section-desc" data-i18n="book_desc">
+              Pateikite užklausą žemiau arba skambinkite tiesiogiai atsakingam meistrui. Registracija prieš atvykstant BŪTINA.
+            </p>
+          </div>
+
+          <!-- Meistrų tiesioginiai skambučių blokai -->
+          <div class="specialists-call-grid" data-reveal>
+            <div class="specialist-card blue">
               <div>
-                <span class="m-badge-pill">ЗАПИСЬ ОНЛАЙН</span>
-                <h2 class="section-title">Запишитесь на кодирование прямо сейчас</h2>
-                <p class="section-desc">
-                  Оставьте заявку на удобное время. Мы свяжемся с вами в течение 15 минут,
-                  уточним комплектацию по VIN и назовём точную стоимость.
+                <span class="spec-role" data-i18n="karolis1_role">DIAGNOSTIKA · KODAVIMAS · GRANDINĖS PATIKRA (30€)</span>
+                <h3 class="spec-name">Karolis</h3>
+                <p class="spec-text" data-i18n="karolis1_desc">
+                  Kompiuterinė B serijos variklio grandinių patikra neardant variklio (30€), pilna mazgų klaidų analizė, Fullscreen CarPlay, navigacijos žemėlapiai ir parametrų kodavimas.
                 </p>
-
-                <div class="contact-quick-list">
-                  <a href="tel:+79990000000" class="contact-quick-item">
-                    <div class="contact-quick-icon">
-                      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <div>
-                      <div style="font-size: 0.8125rem; color: var(--text-muted);">Быстрый звонок мастера:</div>
-                      <div style="font-weight: 700; font-size: 1.1rem; font-family: var(--font-mono);">+7 (999) 000-00-00</div>
-                    </div>
-                  </a>
-
-                  <a href="https://t.me/bimmer_coding" target="_blank" rel="noopener noreferrer" class="contact-quick-item">
-                    <div class="contact-quick-icon">
-                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-                    </div>
-                    <div>
-                      <div style="font-size: 0.8125rem; color: var(--text-muted);">Написать в Telegram:</div>
-                      <div style="font-weight: 700;">@bimmer_coding</div>
-                    </div>
-                  </a>
-
-                  <a href="https://wa.me/79990000000" target="_blank" rel="noopener noreferrer" class="contact-quick-item">
-                    <div class="contact-quick-icon">
-                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.35.06-.53.25-.19.19-.72.7-.72 1.72s.74 2 1.13 2.5c.38.5 2.15 3.29 5.22 4.61 2.55 1.1 3.07.88 3.63.83.55-.06 1.78-.73 2.03-1.43.25-.7.25-1.31.18-1.43-.07-.13-.26-.2-.55-.34-.29-.15-1.72-.85-1.99-.95-.26-.1-.45-.15-.64.14-.19.3-.74.95-.91 1.14-.17.2-.34.22-.63.08-.29-.15-1.23-.45-2.35-1.45-.87-.77-1.46-1.73-1.63-2.02-.17-.3-.02-.46.13-.6.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49-.16-.01-.35-.01-.54-.01z"/></svg>
-                    </div>
-                    <div>
-                      <div style="font-size: 0.8125rem; color: var(--text-muted);">Чат в WhatsApp:</div>
-                      <div style="font-weight: 700;">+7 (999) 000-00-00</div>
-                    </div>
-                  </a>
-                </div>
               </div>
-
-              <div style="margin-top: 32px; font-size: 0.8125rem; color: var(--text-muted);">
-                📍 Адрес студии: г. Москва, ул. Автозаводская, д. 23, корп. 2 (Бокс BMW)
+              <div class="spec-actions">
+                <a href="tel:+37063305031" class="btn btn-primary font-tabular" style="flex: 1;">
+                  📞 +370 633 05031
+                </a>
+                <button type="button" class="btn btn-secondary" data-copy-phone="+37063305031" title="Kopijuoti numerį">
+                  Kopijuoti
+                </button>
               </div>
             </div>
 
-            <!-- Сама интерактивная форма записи -->
-            <div class="booking-form-card fade-in">
-              <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin: 0 0 20px 0; color: #ffffff;">
-                Форма онлайн-записи
-              </h3>
+            <div class="specialist-card red">
+              <div>
+                <span class="spec-role text-red" data-i18n="karolis2_role">MECHANINIS REMONTAS · GRANDINIŲ KEITIMAS · VARIKLIAI</span>
+                <h3 class="spec-name">Karolis</h3>
+                <p class="spec-text" data-i18n="karolis2_desc">
+                  Variklio grandinių komplektų keitimas (B ir N serijos), mechaninis remontas, transmisijos, važiuoklės bei aušinimo sistemų gedimų šalinimas Kaune.
+                </p>
+              </div>
+              <div class="spec-actions">
+                <a href="tel:+37068644262" class="btn btn-danger font-tabular" style="flex: 1;">
+                  🔧 +370 686 44262
+                </a>
+                <button type="button" class="btn btn-secondary" data-copy-phone="+37068644262" title="Kopijuoti numerį">
+                  Kopijuoti
+                </button>
+              </div>
+            </div>
+          </div>
 
-              <!-- 
-                ДЛЯ НАСТРОЙКИ ФОРМЫ:
-                1. Web3Forms: замените значение value у access_key на ваш ключ с web3forms.com
-                2. Formspree: раскомментируйте action="https://formspree.io/f/YOUR_KEY"
-              -->
-              <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
-                <!-- ВСТАВЬТЕ СЮДА ВАШ КЛЮЧ WEB3FORMS (БЕСПЛАТНО НА WEB3FORMS.COM): -->
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-                <input type="hidden" name="subject" value="Новая заявка на кодирование BMW с сайта" />
-                <input type="hidden" name="from_name" value="Bimmer Coding Studio" />
+          <!-- Užsakymo formos ir informacijos bento grid -->
+          <div class="booking-layout-grid" style="margin-top: 32px;" data-reveal>
+            <!-- Forma -->
+            <div class="form-container-card">
+              <h3 class="form-title" data-i18n="form_title">Registracijos forma internetu</h3>
+              <p class="form-subtitle" data-i18n="form_subtitle">
+                Užpildykite duomenis, ir mes susisieksime su jumis per 1 val. suderinti tikslų laiką.
+              </p>
 
-                <div class="form-row">
+              <!-- Web3Forms / Formspree palaikymas su fallback į tel/mailto -->
+              <form id="booking-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- VIETA JŪSŲ WEB3FORMS ACCESS KEY (pakeiskite jei turite raktą): -->
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+                <input type="hidden" name="subject" value="Nauja BMW registracija iš bimmeristai.github.io" />
+                <input type="hidden" name="from_name" value="Bimmeristai Kaunas Website" />
+
+                <div class="form-row-2">
                   <div class="form-group">
-                    <label class="form-label" for="clientName">Ваше имя *</label>
-                    <input class="form-input" type="text" id="clientName" name="name" placeholder="Константин" required />
+                    <label for="form-name" class="form-label" data-i18n="form_lbl_name">Vardas *</label>
+                    <input
+                      type="text"
+                      id="form-name"
+                      name="name"
+                      class="form-input"
+                      placeholder="Pvz. Tomas"
+                      autocomplete="name"
+                      required
+                    />
                   </div>
                   <div class="form-group">
-                    <label class="form-label" for="clientPhone">Номер телефона *</label>
-                    <input class="form-input" type="tel" id="clientPhone" name="phone" placeholder="+7 (999) 000-00-00" required />
+                    <label for="form-phone" class="form-label" data-i18n="form_lbl_phone">Telefono numeris *</label>
+                    <input
+                      type="tel"
+                      id="form-phone"
+                      name="phone"
+                      class="form-input font-tabular"
+                      placeholder="+370 600 00000"
+                      inputmode="tel"
+                      autocomplete="tel"
+                      required
+                    />
                   </div>
                 </div>
 
-                <div class="form-row">
+                <div class="form-row-2">
                   <div class="form-group">
-                    <label class="form-label" for="carModel">Модель BMW (кузов / год) *</label>
-                    <input class="form-input" type="text" id="carModel" name="car_model" placeholder="Например: G30 530d 2021" required />
+                    <label for="form-car" class="form-label" data-i18n="form_lbl_car">BMW modelis ir metai *</label>
+                    <input
+                      type="text"
+                      id="form-car"
+                      name="car_model"
+                      class="form-input"
+                      placeholder="Pvz. BMW F30 320d 2016"
+                      required
+                    />
                   </div>
                   <div class="form-group">
-                    <label class="form-label" for="serviceSelect">Желаемая услуга</label>
-                    <select class="form-select" id="serviceSelect" name="service">
-                      <option value="Комплексная активация скрытых функций">Комплексная активация скрытых функций</option>
-                      <option value="Apple CarPlay Fullscreen">Apple CarPlay Fullscreen</option>
-                      <option value="Проверка цепи ГРМ (B-серия)">Проверка цепи ГРМ (B-серия)</option>
-                      <option value="Русификация головного устройства">Русификация головного устройства</option>
-                      <option value="Обновление навигации 2026">Обновление навигации 2026</option>
-                      <option value="Прошивка xHP / xDelete">Прошивка АКПП xHP / xDelete</option>
-                      <option value="Индивидуальный вопрос / Другое">Индивидуальный вопрос / Другое</option>
+                    <label for="form-service" class="form-label" data-i18n="form_lbl_service">Pageidaujama paslauga *</label>
+                    <select id="form-service" name="service" class="form-select">
+                      <option value="Grandinės patikra (30€)">Kompiuterinė grandinės patikra (30€)</option>
+                      <option value="Diagnostika (30€)">Pilna kompiuterinė diagnostika (30€)</option>
+                      <option value="CarPlay / Kodavimas">Apple CarPlay / Kodavimas (nuo 30€)</option>
+                      <option value="Grandinių keitimas / Remontas">Mechaninis remontas / Grandinių keitimas</option>
+                      <option value="Navigacijos žemėlapiai">Europos žemėlapių FSC atnaujinimas</option>
+                      <option value="Kita konsultacija">Kita paslauga ar konsultacija</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <label class="form-label" for="bookingDate">
-                    Желаемая дата визита
-                    <span class="optional">(необязательно)</span>
-                  </label>
-                  <input class="form-input" type="date" id="bookingDate" name="preferred_date" />
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="form-date" class="form-label" data-i18n="form_lbl_date">Pageidaujama vizito data (nebūtina)</label>
+                    <input
+                      type="date"
+                      id="form-date"
+                      name="preferred_date"
+                      class="form-input"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="form-email" class="form-label" data-i18n="form_lbl_email">El. paštas (patvirtinimui gauti)</label>
+                    <input
+                      type="email"
+                      id="form-email"
+                      name="email"
+                      class="form-input"
+                      placeholder="vardas@pavyzdys.lt"
+                      autocomplete="email"
+                    />
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="clientComment">
-                    Комментарий или вопрос
-                    <span class="optional">(необязательно)</span>
-                  </label>
-                  <textarea class="form-textarea" id="clientComment" name="comment" placeholder="Например: подскажите, можно ли активировать Sport+ и память старт-стоп? VIN: WBA..."></textarea>
+                  <label for="form-message" class="form-label" data-i18n="form_lbl_message">Papildomas klausimas ar simptomai</label>
+                  <textarea
+                    id="form-message"
+                    name="message"
+                    class="form-textarea"
+                    placeholder="Aprašykite simptomus ar pageidaujamas funkcijas..."
+                  ></textarea>
                 </div>
 
-                <div class="form-group">
-                  <label class="form-checkbox-label">
-                    <input type="checkbox" required checked />
-                    <span>Согласен на обработку персональных данных для связи по заявке. Никакого спама.</span>
+                <div class="form-consent-row">
+                  <input type="checkbox" id="form-consent" required checked class="form-checkbox" />
+                  <label for="form-consent" class="consent-label" data-i18n="form_consent">
+                    Sutinku, kad pateikti kontaktai būtų naudojami vizito suderinimui ir susisiekimui.
                   </label>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
-                  Отправить заявку мастеру
+                <button type="submit" id="form-submit-btn" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+                  <span id="btn-submit-text" data-i18n="form_submit_btn">Pateikti registraciją vizitui</span>
                 </button>
 
-                <div id="bookingStatus" class="form-status" role="alert"></div>
+                <!-- Būsenos pranešimas -->
+                <div id="form-status-alert" class="form-status-alert" role="alert" aria-live="polite"></div>
               </form>
+            </div>
+
+            <!-- Informacija šalia formos -->
+            <div class="form-side-info">
+              <div class="side-info-card">
+                <h4 class="side-info-title" data-i18n="side_info_title">Svarbi informacija atvykstantiems</h4>
+                <ul class="side-info-list">
+                  <li>
+                    <strong data-i18n="side_loc_lbl">📍 Lokacija:</strong>
+                    <span data-i18n="side_loc_val">Kaunas, Lietuva. Tikslus garažo adresas ir privažiavimas atsiunčiamas suderinus laiką.</span>
+                  </li>
+                  <li>
+                    <strong data-i18n="side_hours_lbl">🕒 Darbo laikas:</strong>
+                    <span data-i18n="side_hours_val">I–V 09:00 – 18:00 val. (Savaitgaliais – pagal atskirą susitarimą).</span>
+                  </li>
+                  <li>
+                    <strong data-i18n="side_rule_lbl">⚠️ Taisyklė:</strong>
+                    <span data-i18n="side_rule_val">Be išankstinės registracijos atvykti negalima, nes kiekvienam automobiliui skiriamas individualus laikas.</span>
+                  </li>
+                  <li>
+                    <strong data-i18n="side_email_lbl">✉️ El. paštas:</strong>
+                    <a href="mailto:work.bimmeristai@gmail.com" class="text-accent font-tabular">work.bimmeristai@gmail.com</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="side-cta-card">
+                <h5 class="cta-mini-title" data-i18n="side_quick_call">Reikia skubios konsultacijos?</h5>
+                <p class="cta-mini-text" data-i18n="side_quick_desc">Skambinkite meistrui tiesiogiai – atsakysime į visus klausimus apie jūsų BMW modelį.</p>
+                <a href="tel:+37063305031" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                  📞 Karolis: +370 633 05031
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Statinis Google Maps Kauno žemėlapis -->
+          <div class="map-card-shell" style="margin-top: 36px;" data-reveal>
+            <div class="map-shell-head">
+              <div class="map-title-wrap">
+                <span>📍</span>
+                <span class="map-title-text" data-i18n="map_kaunas_title">Kaunas, Lietuva – Orientacinė serviso vieta</span>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Bimmeristai+Kaunas"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary btn-sm"
+                data-i18n="map_open_btn"
+              >
+                Atidaryti Google Maps ↗
+              </a>
+            </div>
+            <div class="map-frame-holder">
+              <iframe
+                title="Bimmeristai Kaunas serviso lokacija"
+                src="https://www.google.com/maps?q=Kaunas,+Lithuania&amp;output=embed&amp;z=12"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="map-shell-foot">
+              <p class="map-foot-note" data-i18n="map_foot_note">
+                Tikslios koordinatės ir vartų kodas pateikiami SMS arba WhatsApp žinute po atliktos registracijos.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 9. КРАТКИЙ FAQ + ССЫЛКА НА ПОЛНУЮ СТРАНИЦУ /faq/ -->
-      <section class="section-pad" id="faq">
+      <!-- 9. SHORT FAQ PREVIEW -->
+      <section class="section-pad section-dark" id="faq">
         <div class="container">
-          <div class="section-head fade-in">
-            <span class="m-badge-pill">ВОПРОСЫ И ОТВЕТЫ</span>
-            <h2 class="section-title">Часто задаваемые вопросы</h2>
-            <p class="section-desc">
-              Коротко о самом главном. Полный список с техническими подробностями доступен в разделе <a href="./faq/" style="color: var(--bmw-cyan);">FAQ</a>.
+          <div class="section-head" data-reveal>
+            <span class="eyebrow-pill" data-i18n="faq_eyebrow">D.U.K.</span>
+            <h2 class="section-title" data-i18n="faq_title">Dažniausiai užduodami klausimai</h2>
+            <p class="section-desc" data-i18n="faq_desc">
+              Atsakymai apie kompiuterinę grandinės patikrą, saugumą, kainodarą ir variklių ypatumus.
             </p>
           </div>
 
-          <div class="faq-accordion" style="max-width: 860px; margin: 0 auto 32px auto;">
-            <div class="faq-item active fade-in">
-              <button type="button" class="faq-question-btn" aria-expanded="true">
-                <span>Безопасно ли кодирование для заводской гарантии BMW?</span>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          <div class="accordion-stack" data-reveal>
+            <div class="acc-item active">
+              <button type="button" class="acc-trigger" aria-expanded="true">
+                <span data-i18n="faq_q1">Kokia kaina variklio grandinės patikros?</span>
+                <span class="acc-chevron">▾</span>
               </button>
-              <div class="faq-answer">
-                Да, абсолютно. Мы не вмешиваемся в механическую часть и не заливаем сомнительные прошивки. Кодирование активирует опции, которые изначально заложены инженерами BMW AG на заводе. Все блоки возвращаются в исходное состояние за несколько минут перед поездкой к официальному дилеру.
+              <div class="acc-panel">
+                <p data-i18n="faq_a1">
+                  Diagnostinis patikrinimas ir grandinės būklės įvertinimas kompiuteriu kainuoja 30€.
+                </p>
               </div>
             </div>
 
-            <div class="faq-item fade-in">
-              <button type="button" class="faq-question-btn" aria-expanded="false">
-                <span>Сколько времени занимает работа?</span>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            <div class="acc-item">
+              <button type="button" class="acc-trigger" aria-expanded="false">
+                <span data-i18n="faq_q2">Kas geriau: B serijos ar N serijos BMW varikliai?</span>
+                <span class="acc-chevron">▾</span>
               </button>
-              <div class="faq-answer">
-                Стандартный пакет скрытых функций (память Start/Stop, зеркала, приборка, видео в движении) занимает от 30 до 50 минут. Активация Apple CarPlay Fullscreen — около 40 минут. Вы можете комфортно провести это время в клиентской зоне.
+              <div class="acc-panel">
+                <p data-i18n="faq_a2">
+                  B serijos varikliuose yra ištaisyta dauguma N serijos klaidų – grandinės tarnauja daug geriau, indėklai patikimesni, o varikliai atlaiko didesnę galią.
+                </p>
               </div>
             </div>
 
-            <div class="faq-item fade-in">
-              <button type="button" class="faq-question-btn" aria-expanded="false">
-                <span>Какие кузова и серии BMW поддерживаются?</span>
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            <div class="acc-item">
+              <button type="button" class="acc-trigger" aria-expanded="false">
+                <span data-i18n="faq_q3">Kokiems varikliams galima atlikti kompiuterinę grandinės patikrą?</span>
+                <span class="acc-chevron">▾</span>
               </button>
-              <div class="faq-answer">
-                Мы работаем со всеми поколениями BMW: E-серия (E90, E60, E70), F-серия (F30, F10, F15, F25), современные G-серии (G20, G30, G05, G06, G07, G22), а также гибриды и электромобили I-серии.
+              <div class="acc-panel">
+                <p data-i18n="faq_a3">
+                  Visiems B serijos (B38, B48, B58, B47 ir t.t.) benzininiams ir dyzeliniams BMW varikliams (F3x, F1x, G serijai ir kt.).
+                </p>
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <button type="button" class="acc-trigger" aria-expanded="false">
+                <span data-i18n="faq_q4">Kaip veikia grandinės diagnostika neardant variklio?</span>
+                <span class="acc-chevron">▾</span>
+              </button>
+              <div class="acc-panel">
+                <p data-i18n="faq_a4">
+                  Dyzeliniams B47 varikliams kompiuteris tiksliai rodo veleno kampą laipsniais. Benzininiams varikliams diagnostika atlieka apsukų kėlimo testą ir nustato išsitampymą. Jei parodoma keitimo riba, rekomenduojama keisti.
+                </p>
+              </div>
+            </div>
+
+            <div class="acc-item">
+              <button type="button" class="acc-trigger" aria-expanded="false">
+                <span data-i18n="faq_q5">Ar prieš atvykstant būtina registruotis?</span>
+                <span class="acc-chevron">▾</span>
+              </button>
+              <div class="acc-panel">
+                <p data-i18n="faq_a5">
+                  Taip, registracija prieš atvykstant yra griežtai būtina, kadangi kiekvienam BMW skiriamas individualus laikas ir diagnostinė įranga.
+                </p>
               </div>
             </div>
           </div>
 
-          <div style="text-align: center;" class="fade-in">
-            <a href="./faq/" class="btn btn-secondary">
-              <span>Смотреть все 10+ вопросов в разделе FAQ</span>
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div style="margin-top: 24px;" data-reveal>
+            <a href="faq.html" class="btn btn-outline" data-i18n="btn_view_all_faq">
+              Peržiūrėti visus klausimus D.U.K. puslapyje →
             </a>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- 10. ФУТЕР -->
+    <!-- 10. FOOTER -->
     <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div>
-            <div class="brand-link" style="margin-bottom: 16px;">
-              <div class="brand-symbol">M</div>
-              <div class="brand-meta">
-                <span class="brand-name">BIMMER CODING</span>
-                <span class="brand-sub">EXCLUSIVE BMW SERVICE</span>
-              </div>
+      <div class="container footer-content">
+        <div class="footer-col-brand">
+          <a href="index.html" class="brand-link" style="display: inline-flex; margin-bottom: 8px;">
+            <img
+              src="https://i.postimg.cc/wjW2sKHS/bimmeristai-logo.jpg"
+              alt="Bimmeristai Logo"
+              class="brand-logo"
+              width="36"
+              height="36"
+              loading="lazy"
+            />
+            <div class="brand-text">
+              <span class="brand-title">BIMMERISTAI</span>
+              <span class="brand-subtitle">KAUNAS</span>
             </div>
-            <p style="color: var(--text-muted); font-size: 0.875rem; line-height: 1.6; max-width: 320px;">
-              Профессиональное кодирование, диагностика и дооснащение автомобилей BMW с сохранением заводской гарантии.
-            </p>
-          </div>
-
-          <div>
-            <h4 class="footer-col-title">Навигация</h4>
-            <ul class="footer-links-list">
-              <li><a href="#services">Услуги</a></li>
-              <li><a href="#prices">Прайс-лист</a></li>
-              <li><a href="#advantages">Оборудование</a></li>
-              <li><a href="./faq/">База знаний (FAQ)</a></li>
-              <li><a href="./contacts/">Контакты и адрес</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="footer-col-title">Популярное</h4>
-            <ul class="footer-links-list">
-              <li><a href="#services">Apple CarPlay Fullscreen</a></li>
-              <li><a href="#services">Память Start/Stop</a></li>
-              <li><a href="#services">Проверка цепи B-моторов</a></li>
-              <li><a href="#services">Русификация USA / Korea</a></li>
-              <li><a href="#services">M-приборная панель</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="footer-col-title">Связь с мастером</h4>
-            <p style="color: #ffffff; font-family: var(--font-mono); font-weight: 700; font-size: 1.15rem; margin: 0 0 8px 0;">
-              +7 (999) 000-00-00
-            </p>
-            <p style="color: var(--text-muted); font-size: 0.8125rem; margin: 0 0 16px 0;">
-              г. Москва, ул. Автозаводская, д. 23к2<br />Ежедневно с 10:00 до 21:00
-            </p>
-            <a href="#booking" class="btn btn-primary btn-sm" style="width: 100%;">Записаться онлайн</a>
-          </div>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">
+            BMW diagnostika, kodavimas ir mechaninis remontas Kaune.<br />
+            Nepriklausomas specializuotas BMW entuziastų centras.
+          </p>
         </div>
 
-        <div class="footer-bottom">
-          <div>© 2026 Bimmer Coding Studio. Все права защищены.</div>
-          <div style="color: var(--text-muted); font-size: 0.75rem;">
-            BMW является зарегистрированным товарным знаком Bayerische Motoren Werke AG. Сервис является независимым специализированным центром.
+        <nav class="footer-col-nav" aria-label="Poraštės navigacija">
+          <span class="footer-nav-title" data-i18n="footer_nav_title">Navigacija</span>
+          <div class="footer-nav-links">
+            <a href="#services" data-i18n="nav_services">Paslaugos</a>
+            <a href="#simulator" data-i18n="nav_simulator">Kodavimas</a>
+            <a href="#chain-check" data-i18n="nav_chain">Grandinės patikra</a>
+            <a href="#pricing" data-i18n="nav_prices">Kainoraštis</a>
+            <a href="faq.html" data-i18n="nav_faq">D.U.K.</a>
+            <a href="contacts.html" data-i18n="nav_contacts">Kontaktai</a>
+          </div>
+        </nav>
+
+        <div class="footer-col-contacts">
+          <span class="footer-nav-title" data-i18n="footer_contacts_title">Kontaktai Kaune</span>
+          <div class="footer-contact-item">
+            <span class="footer-role" data-i18n="karolis1_role_short">Diagnostika ir kodavimas:</span>
+            <a href="tel:+37063305031" class="footer-phone font-tabular">+370 633 05031</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-role" data-i18n="karolis2_role_short">Mechaninis remontas:</span>
+            <a href="tel:+37068644262" class="footer-phone font-tabular">+370 686 44262</a>
+          </div>
+          <div class="footer-contact-item" style="margin-top: 6px;">
+            <a href="mailto:work.bimmeristai@gmail.com" class="footer-email font-tabular">work.bimmeristai@gmail.com</a>
           </div>
         </div>
       </div>
+
+      <div class="container footer-sub-bar">
+        <span class="footer-copy">© 2026 Bimmeristai Kaunas. Visos teisės saugomos.</span>
+        <span class="footer-disclaimer" data-i18n="footer_disclaimer">
+          BMW yra registruotas Bayerische Motoren Werke AG prekių ženklas. Servisas yra nepriklausomas centras.
+        </span>
+      </div>
     </footer>
 
-    <!-- 11. МОБИЛЬНАЯ ЗАКРЕПЛЁННАЯ НИЖНЯЯ ПАНЕЛЬ КОНВЕРСИИ -->
-    <div class="mobile-bottom-bar" aria-label="Быстрые действия">
-      <a href="tel:+79990000000" class="btn btn-secondary">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>Позвонить</span>
+    <!-- 11. MOBILI FIKSUOTA KONVERSIJOS JUOSTA (iOS SAFE-AREA COMPLIANT) -->
+    <aside class="mobile-sticky-bar" aria-label="Greiti veiksmai telefone">
+      <a href="tel:+37063305031" class="sticky-bar-btn sticky-call" title="Skambinti Karoliui">
+        <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span data-i18n="btn_call">Skambinti</span>
       </a>
-      <a href="#booking" class="btn btn-primary">
-        <span>Записаться</span>
+      <a href="#booking" class="sticky-bar-btn sticky-book" title="Registruotis vizitui">
+        <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span data-i18n="btn_book_short">Registracija</span>
       </a>
-    </div>
+    </aside>
 
-    <!-- Чистый скрипт -->
-    <script src="./assets/js/main.js" defer></script>
+    <!-- Standalone vanilla JS -->
+    <script src="script.js"></script>
   </body>
 </html>
